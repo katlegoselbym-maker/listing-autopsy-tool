@@ -1,0 +1,1575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>The 72-Hour Listing Autopsy | Find the Word Killing Your Sale</title>
+<meta name="description" content="A forensic AI diagnostic system that finds the invisible flaw in your listing copy. No guessing. No price drop. A clinical diagnosis in 20 minutes."/>
+<meta name="keywords" content="real estate listing optimization, expired listing strategy, stale listing fix, AI real estate tools, listing description rewrite, MLS optimization, days on market solution, listing not getting showings, real estate agent tools"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500;1,6..72,600;1,6..72,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet"/>
+<style>
+/* ============ SHARED VARIABLES ============ */
+:root {
+  --black:#0a0a0a;--white:#fafaf8;--off:#f3f0eb;
+  --green:#006c49;--gdim:#004d34;--glight:#e8f5ee;--gmuted:#4edea3;
+  --red:#b91c1c;--rlight:#fef2f2;--amber:#d97706;--alight:#fffbeb;
+  --border:#ddd9d3;--surface:#f7f5f0;--card:#ffffff;
+  --ink:#1a1a1a;--muted:#5e5e5e;--faint:#8a8a8a;
+  --fd:'Newsreader',Georgia,serif;--fb:'DM Sans',sans-serif;--fm:'DM Mono',monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--surface);color:var(--ink);font-family:var(--fb);font-size:1rem;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");opacity:.022;pointer-events:none;z-index:999}
+.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;vertical-align:middle;line-height:1}
+.page{display:none}
+.w{max-width:1180px;margin:0 auto;padding:0 2.5rem}
+.wm{max-width:960px;margin:0 auto;padding:0 2.5rem}
+.ws{max-width:720px;margin:0 auto;padding:0 2.5rem}
+@media(max-width:680px){.w,.wm,.ws{padding:0 1.25rem}}
+section{padding:6rem 0}
+.tag{font-family:var(--fm);font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--green);display:block;margin-bottom:1.1rem}
+h2.sh{font-family:var(--fd);font-size:clamp(2rem,4vw,3.2rem);font-weight:600;line-height:1.08;letter-spacing:-.02em;margin-bottom:1.5rem}
+h2.sh em{font-style:italic}
+.bp{font-size:1.05rem;color:var(--muted);line-height:1.82;margin-bottom:1.1rem}
+.bp strong{color:var(--ink);font-weight:600}
+.bp em{font-style:italic}
+.topbar{background:var(--green);color:var(--white);text-align:center;padding:.65rem 1rem;font-family:var(--fm);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase}
+nav.main-nav{background:rgba(247,245,240,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:500}
+.ni{display:flex;align-items:center;justify-content:space-between;height:68px;max-width:1180px;margin:0 auto;padding:0 2.5rem;gap:2rem}
+.nl{font-family:var(--fd);font-size:1.05rem;font-weight:600;color:var(--black);letter-spacing:-.02em;flex-shrink:0;text-decoration:none;cursor:pointer}
+.nl em{font-style:italic}
+.nlinks{display:flex;gap:2rem;list-style:none}
+.nlinks a{font-family:var(--fm);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);text-decoration:none;transition:color .2s}
+.nlinks a:hover{color:var(--black)}
+@media(max-width:700px){.nlinks{display:none}}
+.ncta{background:var(--black);color:var(--white);padding:.65rem 1.5rem;font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;border:none;cursor:pointer;text-decoration:none;transition:background .2s;white-space:nowrap;flex-shrink:0}
+.ncta:hover{background:var(--green)}
+.btn-h{display:inline-flex;align-items:center;gap:.6rem;padding:1.1rem 2.4rem;background:var(--green);color:var(--white);font-family:var(--fm);font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;border:none;cursor:pointer;text-decoration:none;transition:background .2s,transform .15s}
+.btn-h:hover{background:var(--gdim);transform:translateY(-1px)}
+.btn-buy{display:flex;align-items:center;justify-content:center;gap:.6rem;width:100%;padding:1.2rem 2rem;background:var(--green);color:var(--white);font-family:var(--fm);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;border:none;cursor:pointer;text-decoration:none;transition:background .2s;margin-top:1.5rem}
+.btn-buy:hover{background:var(--gdim)}
+.ap{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.ap.in{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+footer{background:var(--black);border-top:1px solid rgba(255,255,255,.05);padding:3rem 0}
+.fi2{display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;max-width:1180px;margin:0 auto;padding:0 2.5rem}
+.flogo{font-family:var(--fd);font-size:1rem;color:rgba(255,255,255,.5);font-style:italic}
+.flinks{display:flex;gap:2rem}
+.flinks a{font-family:var(--fm);font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.2);text-decoration:none;transition:color .2s}
+.flinks a:hover{color:rgba(255,255,255,.6)}
+
+/* ============ SALES PAGE ============ */
+.hero{background:var(--black);color:var(--white);padding:7rem 0 5.5rem;position:relative;overflow:hidden}
+.hgrid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:48px 48px}
+.hglow{position:absolute;inset:0;background:radial-gradient(ellipse 55% 65% at 8% 70%,rgba(0,108,73,.14) 0%,transparent 55%),radial-gradient(ellipse 35% 35% at 88% 15%,rgba(78,222,163,.05) 0%,transparent 50%)}
+.hero .w{position:relative;z-index:2}
+.hlayout{display:grid;grid-template-columns:1fr 300px;gap:5rem;align-items:center}
+@media(max-width:940px){.hlayout{grid-template-columns:1fr}.phone-wrap{display:none}}
+.htag{display:inline-flex;align-items:center;gap:.5rem;padding:.45rem 1rem;background:rgba(185,28,28,.12);border:1px solid rgba(185,28,28,.25);color:#fca5a5;font-family:var(--fm);font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:2.5rem}
+.blink{animation:blink 1.8s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-family:var(--fd);font-size:clamp(2.8rem,6vw,5rem);font-weight:600;line-height:1.06;letter-spacing:-.028em;color:var(--white);margin-bottom:2rem}
+.hero h1 em{font-style:italic;color:rgba(255,255,255,.42)}
+.hb{font-size:1.15rem;color:rgba(255,255,255,.5);max-width:580px;line-height:1.82;margin-bottom:1rem}
+.hb strong{color:rgba(255,255,255,.85);font-weight:500}
+.hacts{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;margin-top:2.5rem}
+.hmicro{font-family:var(--fm);font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.2);display:flex;align-items:center;gap:.75rem}
+.hmicro span{color:var(--gmuted)}
+.phone-wrap{width:260px;background:#111;border:1.5px solid rgba(255,255,255,.07);border-radius:28px;padding:1.5rem 1.25rem;box-shadow:0 50px 100px rgba(0,0,0,.7),inset 0 1px 0 rgba(255,255,255,.04)}
+.pnotch{width:68px;height:5px;background:rgba(255,255,255,.05);border-radius:3px;margin:0 auto 1.5rem}
+.ptime{font-family:var(--fm);font-size:.52rem;color:rgba(255,255,255,.18);letter-spacing:.1em;text-align:right;margin-bottom:1.25rem}
+.pname{font-family:var(--fm);font-size:.46rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.18);margin-bottom:.3rem}
+.pname.r{text-align:right}
+.pbrow{display:flex;flex-direction:column;gap:.35rem;margin-bottom:.4rem}
+.pbrow.r{align-items:flex-end}
+.bub{display:inline-block;max-width:90%;padding:.6rem .85rem;border-radius:14px;font-size:.76rem;line-height:1.45}
+.bub.t{background:rgba(255,255,255,.07);color:rgba(255,255,255,.7)}
+.bub.y{background:var(--green);color:rgba(255,255,255,.92)}
+.ptyp{display:flex;gap:3px;align-items:center;padding:.55rem .75rem;background:rgba(255,255,255,.05);border-radius:12px;width:fit-content;margin-top:.5rem}
+.td{width:4px;height:4px;background:rgba(255,255,255,.28);border-radius:50%;animation:tdot 1.2s infinite}
+.td:nth-child(2){animation-delay:.2s}.td:nth-child(3){animation-delay:.4s}
+@keyframes tdot{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-4px)}}
+.pcap{font-family:var(--fm);font-size:.45rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.1);text-align:center;margin-top:1.25rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.04)}
+.pstrip{background:var(--off);border-bottom:1px solid var(--border);padding:1.2rem 0}
+.psi{display:flex;align-items:center;justify-content:center;gap:2.5rem;flex-wrap:wrap;max-width:1180px;margin:0 auto;padding:0 2.5rem}
+.pit{display:flex;align-items:center;gap:.45rem;font-family:var(--fm);font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+.pit .material-symbols-outlined{font-size:.85rem;color:var(--green)}
+.story-s{background:var(--white)}
+.sgrid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start}
+@media(max-width:860px){.sgrid{grid-template-columns:1fr;gap:3rem}}
+.warcs{margin-top:2rem}
+.wr{display:flex;gap:1.25rem;align-items:flex-start;padding:1.1rem 0;border-bottom:1px solid var(--border)}
+.wr:last-child{border-bottom:none}
+.wl{font-family:var(--fm);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);flex-shrink:0;width:72px;padding-top:.2rem}
+.wr p{font-size:.9rem;color:var(--muted);line-height:1.7}
+.wr p strong{color:var(--ink)}
+.wr p em{font-style:italic;color:var(--red)}
+.verdict{background:var(--black);color:var(--white);padding:2.5rem;margin-top:2rem;position:relative;overflow:hidden}
+.verdict::before{content:'\201C';position:absolute;top:-1.5rem;left:1.25rem;font-family:var(--fd);font-size:12rem;color:rgba(255,255,255,.04);line-height:1;pointer-events:none}
+.verdict blockquote{font-family:var(--fd);font-size:1.5rem;font-style:italic;line-height:1.35;margin-bottom:1.25rem;position:relative;z-index:1}
+.verdict cite{font-family:var(--fm);font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gmuted);font-style:normal}
+.killers{margin-top:2.5rem;display:flex;flex-direction:column;gap:1rem}
+.kcard{border:1px solid var(--border);background:var(--card);padding:1.75rem;transition:border-color .2s}
+.kcard:hover{border-color:var(--black)}
+.ktag{font-family:var(--fm);font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:.5rem;display:block}
+.kcard h4{font-weight:600;font-size:1rem;color:var(--black);margin-bottom:.5rem}
+.kcard p{font-size:.875rem;color:var(--muted);line-height:1.7}
+.kex{margin-top:.75rem;padding:.75rem 1rem;background:var(--rlight);border-left:2px solid var(--red);font-size:.8rem;font-style:italic;color:var(--red);line-height:1.6}
+.obj-s{background:var(--black);color:var(--white);padding:6rem 0}
+.ogrid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+@media(max-width:860px){.ogrid{grid-template-columns:1fr;gap:3rem}}
+.ob{font-size:1.05rem;color:rgba(255,255,255,.48);line-height:1.82;margin-bottom:1.1rem}
+.ob strong{color:rgba(255,255,255,.85);font-weight:500}
+.ob em{font-style:italic;color:rgba(255,255,255,.32)}
+.cmpblk{margin-top:2rem}
+.cmpr{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.06);margin-bottom:1px}
+.cmpc{padding:1.25rem 1.5rem;background:rgba(255,255,255,.02)}
+.cmph{font-family:var(--fm);font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:1rem}
+.cmph.bad{color:#f87171}.cmph.good{color:var(--gmuted)}
+.cmpc p{font-size:.84rem;color:rgba(255,255,255,.42);line-height:1.7}
+.analogy-box{margin-top:2rem;padding:2rem;border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.02)}
+.analogy-box p{font-size:.9rem;color:rgba(255,255,255,.45);line-height:1.8;font-style:italic}
+.analogy-box p strong{color:rgba(255,255,255,.7);font-style:normal}
+.for-s{background:var(--surface);padding:6rem 0;border-top:1px solid var(--border)}
+.agrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:3rem}
+@media(max-width:900px){.agrid{grid-template-columns:1fr 1fr}}
+@media(max-width:500px){.agrid{grid-template-columns:1fr}}
+.ac{background:var(--card);border:1px solid var(--border);padding:2rem 1.75rem;transition:border-color .2s,transform .2s}
+.ac:hover{border-color:var(--black);transform:translateY(-2px)}
+.aico{font-size:1.75rem;margin-bottom:1rem;display:block}
+.ac h4{font-weight:600;font-size:.95rem;margin-bottom:.5rem;color:var(--black)}
+.ac p{font-size:.84rem;color:var(--muted);line-height:1.7}
+.prod-s{background:var(--white);padding:6rem 0}
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;margin-bottom:5rem}
+@media(max-width:860px){.pgrid{grid-template-columns:1fr;gap:3rem}}
+.pbadge{display:inline-block;background:var(--alight);color:var(--amber);padding:.4rem .85rem;font-family:var(--fm);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;border:1px solid rgba(217,119,6,.2);margin-bottom:1.25rem}
+.mechblock{margin-top:2rem;padding:1.75rem;background:var(--off);border:1px solid var(--border)}
+.mechblock .mech-name{font-family:var(--fd);font-size:1.25rem;font-weight:500;font-style:italic;color:var(--black);margin-bottom:.5rem}
+.mechblock p{font-size:.875rem;color:var(--muted);line-height:1.7}
+.fblock{margin-top:2.5rem;border-top:2px solid var(--black);padding-top:2rem}
+.flabel{font-family:var(--fm);font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);margin-bottom:1.5rem;display:block}
+.fb{display:flex;gap:1rem;align-items:flex-start;padding:.9rem 0;border-bottom:1px solid var(--border)}
+.fb:last-child{border-bottom:none}
+.fbico{color:var(--green);flex-shrink:0;margin-top:.12rem}
+.fbico .material-symbols-outlined{font-size:1rem}
+.fb p{font-size:.92rem;color:var(--muted);line-height:1.72}
+.fb p strong{color:var(--ink);font-weight:600}
+.toolwrap{border:1px solid var(--border);background:var(--card);overflow:hidden}
+.twh{background:var(--black);color:var(--white);padding:1rem 1.5rem;font-family:var(--fm);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase}
+.trow{display:flex;gap:1.25rem;align-items:flex-start;padding:1.25rem 1.5rem;border-bottom:1px solid var(--border);transition:background .2s}
+.trow:last-child{border-bottom:none}
+.trow:hover{background:var(--off)}
+.tnum{width:28px;height:28px;background:var(--black);color:var(--white);display:flex;align-items:center;justify-content:center;font-family:var(--fm);font-size:.58rem;flex-shrink:0;border-radius:2px}
+.trow h4{font-weight:600;font-size:.88rem;color:var(--black);margin-bottom:.3rem}
+.trow p{font-size:.8rem;color:var(--muted);line-height:1.65}
+.tstart{display:inline-block;margin-top:.35rem;font-family:var(--fm);font-size:.5rem;letter-spacing:.14em;text-transform:uppercase;color:var(--green);background:var(--glight);padding:.2rem .45rem}
+.how-s{background:var(--black);color:var(--white);padding:6rem 0}
+.hgri{display:grid;grid-template-columns:repeat(4,1fr);margin-top:3rem;border:1px solid rgba(255,255,255,.06)}
+@media(max-width:860px){.hgri{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.hgri{grid-template-columns:1fr}}
+.hst{padding:2.5rem 2rem;border-right:1px solid rgba(255,255,255,.06)}
+.hst:last-child{border-right:none}
+.hsn{font-family:var(--fd);font-size:4rem;font-weight:700;color:rgba(255,255,255,.04);line-height:1;margin-bottom:1.25rem;display:block}
+.hst h4{font-family:var(--fm);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gmuted);margin-bottom:.6rem}
+.hst p{font-size:.875rem;color:rgba(255,255,255,.4);line-height:1.7}
+.hst p strong{color:rgba(255,255,255,.7);font-weight:500}
+.proof-s{background:var(--surface);padding:6rem 0}
+.nband{background:var(--black);display:grid;grid-template-columns:repeat(3,1fr);margin-top:3rem}
+@media(max-width:600px){.nband{grid-template-columns:1fr}}
+.nc{padding:3rem 2.5rem;text-align:center;border-right:1px solid rgba(255,255,255,.05)}
+.nc:last-child{border-right:none}
+.bign{font-family:var(--fd);font-size:5rem;font-weight:700;letter-spacing:-.04em;line-height:1;margin-bottom:.5rem;opacity:.14;transition:opacity .35s}
+.nc:hover .bign{opacity:1}
+.nc:nth-child(1) .bign{color:#f87171}.nc:nth-child(2) .bign{color:rgba(255,255,255,.7)}.nc:nth-child(3) .bign{color:var(--gmuted)}
+.nlbl{font-family:var(--fm);font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.6rem}
+.nc:nth-child(1) .nlbl{color:#f87171}.nc:nth-child(2) .nlbl{color:rgba(255,255,255,.25)}.nc:nth-child(3) .nlbl{color:var(--gmuted)}
+.ndesc{font-size:.8rem;color:rgba(255,255,255,.3);line-height:1.65}
+.psgrid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:4rem}
+@media(max-width:860px){.psgrid{grid-template-columns:1fr;gap:3rem}}
+.pstory h3{font-family:var(--fd);font-size:2rem;font-style:italic;line-height:1.2;margin-bottom:1.25rem}
+.tstack{display:flex;flex-direction:column;gap:1.25rem}
+.tcard{background:var(--card);border:1px solid var(--border);padding:1.75rem}
+.stars{color:var(--amber);font-size:.75rem;margin-bottom:.75rem;letter-spacing:.1em}
+.tcard blockquote{font-size:.875rem;font-style:italic;color:var(--muted);line-height:1.75;margin-bottom:1rem}
+.rev{display:flex;align-items:center;gap:.75rem;border-top:1px solid var(--border);padding-top:.85rem}
+.ava{width:34px;height:34px;background:var(--black);color:var(--white);display:flex;align-items:center;justify-content:center;font-family:var(--fm);font-size:.7rem;flex-shrink:0;border-radius:50%}
+.rn{font-size:.84rem;font-weight:600;color:var(--ink)}
+.rr{font-family:var(--fm);font-size:.54rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+.qual-s{background:var(--white);padding:5rem 0;border-top:1px solid var(--border)}
+.qgrid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2.5rem}
+@media(max-width:660px){.qgrid{grid-template-columns:1fr}}
+.qc{padding:2rem}
+.qc.yes{background:var(--glight);border:1px solid rgba(0,108,73,.15)}
+.qc.no{background:#fef2f2;border:1px solid rgba(185,28,28,.12)}
+.qch{font-family:var(--fm);font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:1.25rem;display:flex;align-items:center;gap:.4rem}
+.qc.yes .qch{color:var(--green)}.qc.no .qch{color:var(--red)}
+.qi{display:flex;gap:.75rem;padding:.6rem 0;border-bottom:1px solid rgba(0,0,0,.04);align-items:flex-start}
+.qi:last-child{border-bottom:none}
+.qi .material-symbols-outlined{font-size:1rem;flex-shrink:0;margin-top:.1rem}
+.qc.yes .qi .material-symbols-outlined{color:var(--green)}.qc.no .qi .material-symbols-outlined{color:var(--red)}
+.qi p{font-size:.875rem;color:var(--muted);line-height:1.55}
+.price-s{background:var(--surface);padding:7rem 0;border-top:1px solid var(--border)}
+.pcard{background:var(--card);border:2px solid var(--black);padding:4rem;max-width:620px;margin:3rem auto 0;position:relative;box-shadow:14px 14px 0 rgba(0,0,0,.06)}
+.pflag{position:absolute;top:0;right:0;background:var(--black);color:var(--white);padding:.4rem 1rem;font-family:var(--fm);font-size:.56rem;letter-spacing:.14em;text-transform:uppercase}
+.prow{display:flex;align-items:baseline;gap:.5rem;margin:1.5rem 0 .5rem}
+.pcur{font-family:var(--fd);font-size:1.5rem;color:var(--muted);font-weight:400}
+.pnum{font-family:var(--fd);font-size:5rem;font-weight:700;letter-spacing:-.04em;line-height:1;color:var(--black)}
+.pnote{font-family:var(--fm);font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-bottom:2rem}
+.cbuls{margin:1.75rem 0;border-top:1px solid var(--border);padding-top:1.5rem}
+.cbi{display:flex;gap:.75rem;align-items:flex-start;padding:.55rem 0;border-bottom:1px solid var(--border)}
+.cbi:last-child{border-bottom:none}
+.cbi .material-symbols-outlined{font-size:1rem;color:var(--green);flex-shrink:0;margin-top:.1rem}
+.cbi span{font-size:.875rem;color:var(--muted);line-height:1.6}
+.cbi strong{color:var(--ink)}
+.gbox{margin-top:1.5rem;display:flex;gap:.75rem;align-items:flex-start;padding:1.25rem;background:var(--off);border:1px solid var(--border)}
+.gbox .material-symbols-outlined{color:var(--green);flex-shrink:0}
+.gbox p{font-size:.8rem;color:var(--muted);line-height:1.7}
+.gbox strong{color:var(--ink)}
+.faq-s{background:var(--white);padding:6rem 0;border-top:1px solid var(--border)}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:3rem}
+@media(max-width:660px){.fgrid{grid-template-columns:1fr}}
+.fi{padding:1.75rem;border:1px solid var(--border);background:var(--card)}
+.fi h4{font-weight:600;font-size:.95rem;margin-bottom:.75rem;color:var(--black);line-height:1.4}
+.fi p{font-size:.875rem;color:var(--muted);line-height:1.72}
+.fcta-s{background:var(--black);color:var(--white);padding:8rem 0;text-align:center;position:relative;overflow:hidden}
+.fcta-s::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 65% at 50% 100%,rgba(0,108,73,.14) 0%,transparent 60%)}
+.fcta-s .w{position:relative;z-index:2}
+.fh{font-family:var(--fd);font-size:clamp(2.5rem,5vw,4.5rem);font-weight:600;font-style:italic;line-height:1.08;letter-spacing:-.025em;color:var(--white);margin-bottom:1.5rem}
+.fsub{font-size:1.1rem;color:rgba(255,255,255,.42);max-width:520px;margin:0 auto 3rem;line-height:1.82}
+.fsub strong{color:rgba(255,255,255,.8);font-weight:500}
+
+/* ============ THANK YOU PAGE ============ */
+.ty-wrap{background:var(--black);color:var(--white);min-height:100vh;padding:5rem 0 6rem;position:relative;overflow:hidden}
+.ty-grid-bg{position:fixed;inset:0;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:48px 48px;pointer-events:none}
+.ty-glow{position:fixed;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(0,108,73,.12) 0%,transparent 60%);pointer-events:none}
+.ty-content{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:0 2.5rem}
+@media(max-width:600px){.ty-content{padding:0 1.25rem}}
+.ty-brand{font-family:var(--fd);font-size:.95rem;font-weight:500;font-style:italic;color:rgba(255,255,255,.3);margin-bottom:3rem;display:block}
+.ty-badge{display:inline-flex;align-items:center;gap:.6rem;padding:.55rem 1.1rem;background:rgba(78,222,163,.1);border:1px solid rgba(78,222,163,.25);color:var(--gmuted);font-family:var(--fm);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:2rem}
+.pulse-dot{width:6px;height:6px;background:var(--gmuted);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.8)}}
+.ty-h{font-family:var(--fd);font-size:clamp(2.5rem,5vw,4rem);font-weight:600;line-height:1.08;letter-spacing:-.025em;color:var(--white);margin-bottom:1.5rem}
+.ty-h em{font-style:italic;color:rgba(255,255,255,.42)}
+.ty-sub{font-size:1.1rem;color:rgba(255,255,255,.5);max-width:560px;line-height:1.75;margin-bottom:3rem}
+.ty-sub strong{color:rgba(255,255,255,.85);font-weight:500}
+.dl-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);padding:2.5rem;margin-bottom:3rem;position:relative;overflow:hidden}
+.dl-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--gmuted)}
+.dl-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:1rem}
+.dl-title{font-family:var(--fd);font-size:1.5rem;font-weight:500;font-style:italic;color:var(--white)}
+.dl-meta{font-family:var(--fm);font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.25)}
+.dl-includes{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:2rem}
+@media(max-width:560px){.dl-includes{grid-template-columns:1fr}}
+.dl-item{display:flex;align-items:center;gap:.5rem;font-size:.85rem;color:rgba(255,255,255,.5)}
+.dl-item .material-symbols-outlined{font-size:.9rem;color:var(--gmuted)}
+.btn-dl{display:flex;align-items:center;justify-content:center;gap:.6rem;width:100%;padding:1.15rem 2rem;background:var(--green);color:var(--white);font-family:var(--fm);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;border:none;cursor:pointer;text-decoration:none;transition:background .2s}
+.btn-dl:hover{background:var(--gdim)}
+.steps-block{margin-bottom:3rem}
+.steps-lbl{font-family:var(--fm);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:1.25rem;display:block}
+.step-row{display:flex;gap:1.5rem;align-items:flex-start;padding:1.25rem 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.step-row:last-child{border-bottom:none}
+.step-idx{font-family:var(--fd);font-size:2.5rem;font-weight:700;color:rgba(255,255,255,.04);line-height:1;flex-shrink:0;width:40px}
+.step-row h4{font-weight:600;font-size:.95rem;color:var(--white);margin-bottom:.35rem}
+.step-row p{font-size:.85rem;color:rgba(255,255,255,.4);line-height:1.6}
+.step-row p strong{color:rgba(255,255,255,.7);font-weight:500}
+.note-box{background:rgba(185,28,28,.08);border:1px solid rgba(185,28,28,.2);padding:1.5rem 1.75rem;margin-bottom:3rem;display:flex;gap:1rem;align-items:flex-start}
+.note-box .material-symbols-outlined{color:#f87171;flex-shrink:0;margin-top:.1rem}
+.note-box p{font-size:.875rem;color:rgba(255,255,255,.5);line-height:1.65}
+.note-box strong{color:rgba(255,255,255,.8)}
+.ty-footer{border-top:1px solid rgba(255,255,255,.06);padding-top:2.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
+.ty-fl-brand{font-family:var(--fd);font-size:1rem;font-style:italic;color:rgba(255,255,255,.25)}
+.support-lnk{font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.2);text-decoration:none;transition:color .2s;display:flex;align-items:center;gap:.4rem}
+.support-lnk:hover{color:rgba(255,255,255,.6)}
+
+/* ============ PRODUCT PAGE ============ */
+.prod-page{background:var(--surface)}
+.prod-nav{background:rgba(250,248,245,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:500}
+.prod-nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1240px;margin:0 auto;padding:0 2.5rem}
+.prod-logo{font-family:var(--fd);font-size:1.15rem;font-weight:600;color:var(--black);letter-spacing:-.02em}
+.prod-logo em{font-style:italic}
+.prod-badge{display:flex;align-items:center;gap:.5rem;background:var(--glight);color:var(--green);padding:.4rem .85rem;font-family:var(--fm);font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;border:1px solid rgba(0,108,73,.2)}
+.prod-badge .pulse-dot{background:var(--green)}
+.access-hero{background:var(--black);color:var(--white);padding:5rem 0;position:relative;overflow:hidden}
+.access-fg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:40px 40px}
+.access-glow{position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 20% 50%,rgba(0,108,73,.12) 0%,transparent 50%),radial-gradient(ellipse 40% 40% at 80% 20%,rgba(78,222,163,.06) 0%,transparent 40%)}
+.access-hero .w{position:relative;z-index:2}
+.access-status{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1rem;background:rgba(78,222,163,.1);border:1px solid rgba(78,222,163,.3);color:var(--gmuted);font-family:var(--fm);font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:2rem}
+.access-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;margin-top:1rem}
+@media(max-width:900px){.access-grid{grid-template-columns:1fr;gap:3rem}}
+.step-cards{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08)}
+.step-card{background:rgba(255,255,255,.03);padding:1.75rem;transition:background .2s}
+.step-card:hover{background:rgba(255,255,255,.07)}
+.step-number{font-family:var(--fm);font-size:.65rem;color:var(--gmuted);letter-spacing:.15em;margin-bottom:.75rem}
+.step-card h3{font-family:var(--fm);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--white);margin-bottom:.6rem}
+.step-card p{font-size:.85rem;color:rgba(255,255,255,.55);line-height:1.6}
+.chap-label{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem}
+.chap-label .ctag{font-family:var(--fm);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--green)}
+.chap-label::after{content:'';flex:1;height:1px;background:var(--border);max-width:80px}
+.prob-sec{background:var(--white)}
+.prob-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+@media(max-width:900px){.prob-grid{grid-template-columns:1fr;gap:3rem}}
+.killer-list{margin-top:2rem}
+.killer-item{display:flex;gap:1.25rem;padding:1.5rem 0;border-bottom:1px solid var(--border)}
+.killer-item:last-child{border-bottom:none}
+.k-icon{width:40px;height:40px;background:var(--black);color:var(--white);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--fm);font-size:.65rem;letter-spacing:.1em}
+.killer-item h4{font-family:var(--fm);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--red);margin-bottom:.4rem}
+.killer-item p{font-size:.9rem;color:var(--muted);line-height:1.6}
+.proto-sec{background:var(--off);padding:6rem 0;border-top:1px solid var(--border)}
+.proto-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--border);margin-top:3rem}
+@media(max-width:900px){.proto-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.proto-grid{grid-template-columns:1fr}}
+.proto-step{padding:2rem 1.75rem;border-right:1px solid var(--border);background:var(--card);transition:background .2s}
+.proto-step:last-child{border-right:none}
+.proto-step:hover{background:var(--off)}
+.proto-num{font-family:var(--fd);font-size:3.5rem;font-weight:600;color:var(--black);opacity:.07;line-height:1;margin-bottom:1rem}
+.proto-step h3{font-family:var(--fm);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--green);margin-bottom:.6rem}
+.proto-step p{font-size:.875rem;color:var(--muted);line-height:1.6}
+.rules-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem;margin-top:3rem}
+@media(max-width:900px){.rules-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.rules-grid{grid-template-columns:1fr}}
+.rule-card{padding:1.75rem;border:1px solid var(--border);background:var(--card)}
+.rule-num{font-family:var(--fm);font-size:.65rem;color:var(--faint);letter-spacing:.15em;margin-bottom:.75rem}
+.rule-card h4{font-weight:600;font-size:.95rem;margin-bottom:.5rem;color:var(--black)}
+.rule-card p{font-size:.85rem;color:var(--muted);line-height:1.6}
+.arsenal-sec{background:var(--white);padding:6rem 0}
+.arsenal-hdr{display:flex;align-items:baseline;justify-content:space-between;padding-bottom:1.5rem;border-bottom:2px solid var(--black);margin-bottom:5rem}
+.prompt-block{background:var(--black);color:rgba(255,255,255,.85);padding:2.5rem;position:relative;margin-bottom:1rem}
+.prompt-text{font-family:var(--fb);font-size:.95rem;line-height:1.75;color:rgba(255,255,255,.8);margin-bottom:2rem;white-space:pre-wrap}
+.ph{display:inline;background:rgba(78,222,163,.15);color:var(--gmuted);padding:0 .25rem;border-radius:2px;font-family:var(--fm);font-size:.85em;letter-spacing:.05em}
+.copy-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.5rem;border:1px solid rgba(255,255,255,.15);background:transparent;color:rgba(255,255,255,.7);font-family:var(--fm);font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;transition:all .2s;width:100%;justify-content:center}
+.copy-btn:hover{background:rgba(255,255,255,.08);color:var(--white);border-color:rgba(255,255,255,.3)}
+.copy-btn.copied{background:rgba(78,222,163,.15);border-color:var(--gmuted);color:var(--gmuted)}
+.exp-out{background:var(--glight);border-left:3px solid var(--green);padding:1.25rem 1.5rem;margin-top:1rem}
+.exp-lbl{font-family:var(--fm);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin-bottom:.5rem;display:flex;align-items:center;gap:.4rem}
+.exp-out p{font-size:.875rem;color:var(--slate,#45464d);font-style:italic;line-height:1.65}
+.tool-block{display:grid;grid-template-columns:5fr 7fr;gap:4rem;padding:4rem 0;border-bottom:1px solid var(--border);align-items:start}
+.tool-block:last-child{border-bottom:none}
+@media(max-width:900px){.tool-block{grid-template-columns:1fr;gap:2.5rem}}
+.tool-tag{font-family:var(--fm);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin-bottom:.75rem;display:block}
+.tool-detail{margin-bottom:1.25rem}
+.tool-detail h4{font-family:var(--fm);font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--faint);margin-bottom:.4rem}
+.tool-detail p{font-size:.9rem;color:var(--muted);line-height:1.6}
+.sec-tools{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+@media(max-width:900px){.sec-tools{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.sec-tools{grid-template-columns:1fr}}
+.sec-tool{border:1px solid var(--border);padding:2rem;background:var(--card);display:flex;flex-direction:column;transition:border-color .2s,transform .2s}
+.sec-tool:hover{border-color:var(--black);transform:translateY(-2px)}
+.sec-tool h4{font-family:var(--fd);font-size:1.3rem;font-weight:500;line-height:1.2;margin-bottom:1rem}
+.sec-tool p.sdesc{font-size:.875rem;color:var(--muted);line-height:1.6;margin-bottom:1rem;flex-grow:1}
+.mini-prompt{font-size:.8rem;font-style:italic;color:var(--muted);padding:.75rem 1rem;border-top:1px dashed var(--border);margin-top:auto;line-height:1.55}
+.scopy-btn{display:flex;align-items:center;justify-content:center;gap:.4rem;padding:.65rem 1rem;border:1px solid var(--border);background:transparent;color:var(--muted);font-family:var(--fm);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;transition:all .2s;margin-top:1rem;width:100%}
+.scopy-btn:hover{background:var(--black);color:var(--white);border-color:var(--black)}
+.scopy-btn.copied{background:var(--glight);color:var(--green);border-color:var(--green)}
+.case-s{background:var(--black);color:var(--white);padding:6rem 0}
+.case-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+@media(max-width:900px){.case-grid{grid-template-columns:1fr;gap:3rem}}
+.stat-row{display:flex;gap:2.5rem;align-items:flex-start;padding:2.5rem 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.stat-row:last-child{border-bottom:none}
+.stat-number{font-family:var(--fd);font-size:5rem;font-weight:600;line-height:1;opacity:.15;letter-spacing:-.04em;flex-shrink:0;transition:opacity .3s}
+.stat-row:hover .stat-number{opacity:1}
+.stat-row:nth-child(1) .stat-number{color:var(--red)}
+.stat-row:nth-child(2) .stat-number{color:var(--gmuted)}
+.stat-lbl{font-family:var(--fm);font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.5rem}
+.stat-row:nth-child(1) .stat-lbl{color:var(--red)}
+.stat-row:nth-child(2) .stat-lbl{color:var(--gmuted)}
+.stat-desc{font-size:.9rem;color:rgba(255,255,255,.55);line-height:1.6}
+.challenge-s{background:var(--off);padding:6rem 0}
+.challenge-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+@media(max-width:900px){.challenge-inner{grid-template-columns:1fr;gap:3rem}}
+.challenge-card{background:var(--black);color:var(--white);padding:3rem}
+.challenge-card h3{font-family:var(--fd);font-size:2rem;font-style:italic;line-height:1.2;margin-bottom:1.25rem;color:var(--white)}
+.challenge-card p{font-size:.95rem;color:rgba(255,255,255,.65);line-height:1.7;margin-bottom:1.25rem}
+.challenge-steps{margin-top:1.75rem}
+.cs-step{display:flex;gap:1rem;padding:.75rem 0;border-bottom:1px solid rgba(255,255,255,.06);align-items:flex-start}
+.cs-step:last-child{border-bottom:none}
+.cs-num{font-family:var(--fm);font-size:.6rem;color:var(--gmuted);letter-spacing:.15em;flex-shrink:0;margin-top:.15rem}
+.cs-step p{font-size:.875rem;color:rgba(255,255,255,.6);line-height:1.55;margin:0}
+.cs-step strong{color:var(--white)}
+.tl-block{}
+.tl-item{display:flex;gap:1.5rem;padding:1.25rem 0;border-bottom:1px solid var(--border);align-items:flex-start}
+.tl-item:last-child{border-bottom:none}
+.tl-time{font-family:var(--fm);font-size:.65rem;color:var(--faint);letter-spacing:.1em;width:90px;flex-shrink:0;padding-top:.15rem}
+.tl-item h5{font-weight:600;font-size:.9rem;margin-bottom:.25rem;color:var(--black)}
+.tl-item p{font-size:.8rem;color:var(--muted);line-height:1.5}
+.support-s{background:var(--white);border-top:1px solid var(--border);padding:4rem 0}
+.support-inner{text-align:center;max-width:560px;margin:0 auto}
+.support-inner .material-symbols-outlined{font-size:3rem;color:var(--green);display:block;margin-bottom:1.25rem}
+
+/* ============ LIVE DIAGNOSTIC TOOL ============ */
+.diag-tool{border:1px solid var(--border);background:var(--card);overflow:hidden;margin-top:2.5rem}
+.diag-hdr{background:var(--black);color:var(--white);padding:.9rem 1.5rem;display:flex;align-items:center;justify-content:space-between;font-family:var(--fm);font-size:.58rem;letter-spacing:.16em;text-transform:uppercase}
+.diag-dot{width:7px;height:7px;border-radius:50%;background:#4edea3;box-shadow:0 0 7px rgba(78,222,163,.7);display:inline-block;margin-right:.55rem;flex-shrink:0;animation:pulse 2s infinite}
+.diag-body{padding:2rem}
+.diag-stats{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--border);margin-bottom:1.5rem}
+@media(max-width:620px){.diag-stats{grid-template-columns:1fr}}
+.diag-stat{padding:1rem;text-align:center;border-right:1px solid var(--border)}
+.diag-stat:last-child{border-right:none}
+.diag-stat-num{font-family:var(--fd);font-size:1.5rem;font-weight:700;color:var(--green)}
+.diag-stat-lbl{font-family:var(--fm);font-size:.48rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-top:.3rem;line-height:1.55}
+.diag-ta{width:100%;min-height:180px;resize:vertical;padding:1rem;border:1px dashed var(--border);background:var(--surface);font-family:var(--fm);font-size:.8rem;color:var(--ink);outline:none;line-height:1.75;transition:border-color .2s;display:block}
+.diag-ta:focus{border-color:var(--green)}
+.diag-ta::placeholder{color:var(--faint)}
+.diag-char{font-family:var(--fm);font-size:.52rem;letter-spacing:.1em;color:var(--faint);text-align:right;margin-top:.4rem}
+.diag-err{font-family:var(--fm);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin-top:.75rem;display:none}
+.diag-run-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 2rem;background:var(--black);color:var(--white);font-family:var(--fm);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;border:none;cursor:pointer;margin-top:1rem;transition:background .2s}
+.diag-run-btn:hover{background:var(--green)}
+.diag-scan{padding:3rem 2rem;text-align:center}
+.diag-scan-h{font-family:var(--fd);font-size:1.5rem;font-style:italic;color:var(--black);margin-bottom:.75rem}
+.diag-scan-step{font-family:var(--fm);font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;color:var(--green);min-height:1em;margin-bottom:1.5rem}
+.diag-pb-out{width:100%;max-width:420px;height:2px;background:var(--border);margin:0 auto 2rem;border-radius:1px}
+.diag-pb-in{height:100%;background:var(--green);transition:width .8s ease;border-radius:1px}
+.diag-steps-list{display:flex;flex-direction:column;gap:.5rem;text-align:left;max-width:380px;margin:0 auto}
+.dsl-item{display:flex;align-items:center;gap:.75rem;font-family:var(--fm);font-size:.56rem;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);opacity:.35;transition:all .3s}
+.dsl-item.done{color:var(--green);opacity:1}
+.dsl-item.cur{color:var(--black);opacity:1}
+.diag-res-hdr{background:var(--surface);border-bottom:1px solid var(--border);padding:1.25rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.diag-res-title{font-family:var(--fd);font-size:1.1rem;font-weight:600;color:var(--black)}
+.diag-new-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem 1.2rem;border:1px solid var(--border);background:transparent;font-family:var(--fm);font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);cursor:pointer;transition:all .2s}
+.diag-new-btn:hover{border-color:var(--black);color:var(--black)}
+.diag-score-card{display:flex;gap:2rem;align-items:flex-start;padding:2rem;border-bottom:1px solid var(--border);flex-wrap:wrap}
+.diag-score-wrap{text-align:center;flex-shrink:0}
+.diag-score-num{font-family:var(--fd);font-size:4.5rem;font-weight:700;line-height:1;color:var(--red)}
+.diag-score-lbl{font-family:var(--fm);font-size:.48rem;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);margin-top:.35rem}
+.diag-score-info{flex:1;min-width:200px}
+.dbadge{display:inline-block;padding:.3rem .85rem;font-family:var(--fm);font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:.75rem}
+.dbadge.CRITICAL{background:var(--rlight);color:var(--red);border:1px solid rgba(185,28,28,.2)}
+.dbadge.HIGH{background:var(--alight);color:var(--amber);border:1px solid rgba(217,119,6,.2)}
+.dbadge.MODERATE,.dbadge.STABLE{background:var(--glight);color:var(--green);border:1px solid rgba(0,108,73,.2)}
+.diag-stat-grid{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--border)}
+@media(max-width:660px){.diag-stat-grid{grid-template-columns:1fr 1fr}}
+.dsg-cell{padding:1rem;text-align:center;border-right:1px solid var(--border)}
+.dsg-cell:last-child{border-right:none}
+.dsg-num{font-family:var(--fd);font-size:1.5rem;font-weight:700;color:var(--black);line-height:1}
+.dsg-lbl{font-family:var(--fm);font-size:.46rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-top:.3rem;line-height:1.5}
+.diag-tabs{display:flex;border-bottom:1px solid var(--border);overflow-x:auto;background:var(--card)}
+.diag-tab{padding:.85rem 1.5rem;font-family:var(--fm);font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);cursor:pointer;border:none;background:transparent;border-bottom:2px solid transparent;margin-bottom:-1px;white-space:nowrap;transition:all .2s}
+.diag-tab.on{color:var(--black);border-bottom-color:var(--black)}
+.diag-tc{display:none;padding:2rem}
+.diag-tc.on{display:block}
+.dphrase{border:1px solid var(--border);padding:1.5rem;margin-bottom:.75rem;transition:border-color .2s}
+.dphrase:hover{border-color:var(--black)}
+.dphrase.CRITICAL{border-left:3px solid var(--red)}
+.dphrase.HIGH{border-left:3px solid var(--amber)}
+.dphrase.MODERATE{border-left:3px solid var(--green)}
+.dphr-text{font-family:var(--fm);font-size:.78rem;font-weight:600;padding:.25rem .6rem;margin-bottom:.75rem;display:inline-block}
+.dphr-text.CRITICAL{background:var(--rlight);color:var(--red)}
+.dphr-text.HIGH{background:var(--alight);color:var(--amber)}
+.dphr-text.MODERATE{background:var(--glight);color:var(--green)}
+.dphr-dmg{font-size:.875rem;color:var(--muted);line-height:1.7;margin-bottom:.75rem}
+.dphr-rep{display:flex;align-items:flex-start;gap:.75rem;background:var(--glight);padding:.75rem 1rem;border-left:2px solid var(--green)}
+.dphr-rep-lbl{font-family:var(--fm);font-size:.5rem;letter-spacing:.14em;text-transform:uppercase;color:var(--green);flex-shrink:0;padding-top:.12rem}
+.dphr-rep-val{font-family:var(--fm);font-size:.78rem;color:var(--gdim)}
+.dmod{border:1px solid var(--border);padding:1.5rem;margin-bottom:.75rem;transition:border-color .2s}
+.dmod:hover{border-color:var(--black)}
+.dmod-name{font-family:var(--fm);font-size:.54rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:.5rem}
+.dmod-finding{font-size:.875rem;color:var(--muted);line-height:1.7;margin-bottom:.75rem}
+.dmod-act{display:flex;align-items:flex-start;gap:.75rem;background:var(--off);padding:.75rem 1rem}
+.dmod-act-lbl{font-family:var(--fm);font-size:.5rem;letter-spacing:.14em;text-transform:uppercase;color:var(--green);flex-shrink:0;padding-top:.12rem}
+.dmod-act-txt{font-size:.875rem;color:var(--ink);line-height:1.6}
+.drw-card{border:1px solid var(--border);overflow:hidden}
+.drw-hdr{background:var(--surface);padding:.9rem 1.5rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border)}
+.drw-title{font-family:var(--fm);font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+.drw-cpbtn{display:inline-flex;align-items:center;gap:.4rem;padding:.4rem 1rem;border:1px solid var(--border);background:transparent;font-family:var(--fm);font-size:.52rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);cursor:pointer;transition:all .2s}
+.drw-cpbtn:hover,.drw-cpbtn.copied{border-color:var(--green);color:var(--green);background:var(--glight)}
+.drw-body{padding:1.75rem;border-left:3px solid var(--green)}
+.drw-text{font-family:var(--fb);font-size:.95rem;color:var(--ink);line-height:1.85;white-space:pre-wrap}
+.dprot-item{display:flex;gap:1.5rem;padding:1.25rem 0;border-bottom:1px solid var(--border);align-items:flex-start}
+.dprot-item:last-child{border-bottom:none}
+.dprot-left{flex-shrink:0;width:105px}
+.dprot-win{font-family:var(--fm);font-size:.54rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin-bottom:.3rem}
+.dprot-win.IMMEDIATE{color:var(--red)}
+.dprot-win.HIGH{color:var(--amber)}
+.dprot-win.STANDARD{color:var(--green)}
+.dprot-win.MONITOR{color:var(--faint)}
+.dpriority{display:inline-block;font-family:var(--fm);font-size:.46rem;letter-spacing:.1em;text-transform:uppercase;padding:.15rem .5rem}
+.dpriority.IMMEDIATE{background:var(--rlight);color:var(--red)}
+.dpriority.HIGH{background:var(--alight);color:var(--amber)}
+.dpriority.STANDARD{background:var(--glight);color:var(--green)}
+.dpriority.MONITOR{background:var(--off);color:var(--faint)}
+.dprot-action{font-size:.875rem;color:var(--muted);line-height:1.75}
+.diag-info{background:var(--glight);border:1px solid rgba(0,108,73,.15);padding:1rem 1.25rem;display:flex;gap:.75rem;margin-top:1rem;align-items:flex-start}
+.diag-info .material-symbols-outlined{color:var(--green);font-size:1rem;flex-shrink:0}
+.diag-info p{font-size:.8rem;color:var(--muted);line-height:1.65}
+.live-tool-intro{display:inline-flex;align-items:center;gap:.5rem;padding:.45rem .9rem;background:rgba(0,108,73,.08);border:1px solid rgba(0,108,73,.2);color:var(--green);font-family:var(--fm);font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:1.5rem}
+
+/* TOAST */
+.toast{position:fixed;bottom:2rem;right:2rem;background:var(--black);color:var(--white);padding:1rem 1.5rem;font-family:var(--fm);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;z-index:9999;transform:translateY(100px);opacity:0;transition:all .3s ease;display:flex;align-items:center;gap:.5rem;border-left:3px solid var(--gmuted)}
+.toast.show{transform:translateY(0);opacity:1}
+</style>
+</head>
+<body>
+
+<!-- TOAST -->
+<div class="toast" id="toast">
+  <span class="material-symbols-outlined" style="font-size:1rem;color:#4edea3">check_circle</span>
+  Copied to clipboard
+</div>
+
+<!-- ========================================== -->
+<!-- PAGE 1: SALES PAGE                         -->
+<!-- ========================================== -->
+<div id="sales-page" class="page">
+
+<div class="topbar">One-Time Payment &nbsp;&middot;&nbsp; Lifetime Access &nbsp;&middot;&nbsp; No Subscription. Ever.</div>
+
+<nav class="main-nav">
+  <div class="ni">
+    <a class="nl" href="#sales" onclick="goTo('sales')">72-Hour <em>Listing Autopsy</em></a>
+    <ul class="nlinks">
+      <li><a href="#" onclick="scrollToId('story');return false">The Problem</a></li>
+      <li><a href="#" onclick="scrollToId('product');return false">What You Get</a></li>
+      <li><a href="#" onclick="scrollToId('proof');return false">Proof</a></li>
+      <li><a href="#" onclick="scrollToId('pricing');return false">Pricing</a></li>
+    </ul>
+    <a class="ncta" href="https://payhip.com/b/Og6Pd" target="_blank">Get Instant Access</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hgrid"></div><div class="hglow"></div>
+  <div class="w">
+    <div class="hlayout">
+      <div>
+        <div class="htag"><span class="blink">&#9679;</span> For Agents &nbsp;&middot;&nbsp; Etsy Sellers &nbsp;&middot;&nbsp; Side Hustlers &nbsp;&middot;&nbsp; Anyone With a Listing That Won't Move</div>
+        <h1>Day 43.<br>The Seller's Name<br><em>Is On Your Screen Again.</em></h1>
+        <p class="hb">You already know what it says. <strong>"Any updates?"</strong> Two words. They arrive at 11:47pm and sit in your chest like a stone you swallowed somewhere around week three. The property is solid. The price is fair. The photos cost real money.</p>
+        <p class="hb">And still, the buyers who were supposed to show up just did not. Here is the thing nobody says to your face: <strong>the market is not the problem.</strong> There is one specific word buried inside your listing right now that is telling every buyer to scroll past before they understand why. This system finds it in 20 minutes.</p>
+        <div class="hacts">
+          <a class="btn-h" href="https://payhip.com/b/Og6Pd" target="_blank"><span class="material-symbols-outlined" style="font-size:1.1rem">biotech</span>Find the Flaw. Fix the Listing.</a>
+          <div class="hmicro"><span>$37 one-time</span>&nbsp;&middot;&nbsp;Instant download&nbsp;&middot;&nbsp;<span>30-day guarantee</span></div>
+        </div>
+      </div>
+      <div class="phone-wrap">
+        <div class="pnotch"></div>
+        <div class="ptime">11:47 PM &nbsp;&middot;&nbsp; Wednesday</div>
+        <div style="margin-bottom:.75rem">
+          <div class="pname">Marcus W. &mdash; Seller</div>
+          <div class="pbrow"><div class="bub t">Hey, any updates on the listing?</div><div class="bub t">6 weeks now. Should we just drop the price?</div></div>
+        </div>
+        <div style="margin-bottom:.75rem">
+          <div class="pname r">You</div>
+          <div class="pbrow r"><div class="bub y">Working on something. Update first thing tomorrow.</div></div>
+        </div>
+        <div>
+          <div class="pname">Marcus W.</div>
+          <div class="ptyp"><div class="td"></div><div class="td"></div><div class="td"></div></div>
+        </div>
+        <div class="pcap">This is the moment everything changes.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="pstrip">
+  <div class="psi">
+    <div class="pit"><span class="material-symbols-outlined">check_circle</span>Live AI diagnostic tool included</div>
+    <div class="pit"><span class="material-symbols-outlined">check_circle</span>No separate AI account needed</div>
+    <div class="pit"><span class="material-symbols-outlined">check_circle</span>5 forensic prompts for manual use</div>
+    <div class="pit"><span class="material-symbols-outlined">check_circle</span>Instant access after purchase</div>
+  </div>
+</div>
+
+<section class="story-s" id="story">
+  <div class="w">
+    <div class="sgrid">
+      <div class="ap">
+        <span class="tag">The Real Problem</span>
+        <h2 class="sh">This Is Not A<br><em>Price Problem.</em></h2>
+        <p class="bp">Think about the last time you walked into a restaurant, sat down, read the menu, and quietly left without ordering. You could not name the exact reason. Something just felt off. The feeling arrived first. The logic came second.</p>
+        <p class="bp">That is precisely what happens when a buyer reads your listing. They react before they reason. And if the reaction is anything less than <em>"I want to see this place,"</em> they are already gone. They will not email you to explain why. They simply disappear. Quietly. Without a trace.</p>
+        <p class="bp">Every extra week on market compounds the damage. <strong>Days on market is the one number buyers read before they read anything else.</strong> What it whispers to them: something is wrong here. So they lowball. Or they skip it entirely. Either way, you lose before the conversation even starts.</p>
+        <div class="warcs">
+          <div class="wr"><span class="wl">Week 1</span><p>You are patient. It is early. The right buyer simply has not found it yet. You tell yourself this. You tell the seller the same.</p></div>
+          <div class="wr"><span class="wl">Week 2</span><p>You are refreshing the stats more than you want to admit. The views are there. <strong>The inquiries are not.</strong> The word "slow" is doing a lot of heavy lifting for you right now.</p></div>
+          <div class="wr"><span class="wl">Week 3</span><p>The seller mentions price. You start running the math on what a reduction would cost them. You know it is not the answer. But you do not yet have a better one. <em>Not yet.</em></p></div>
+          <div class="wr"><span class="wl">Week 4+</span><p>You have read your own listing description so many times the words stopped meaning anything. <strong>You are basically reading hieroglyphics.</strong> And still nothing jumps out as the problem.</p></div>
+        </div>
+        <div class="verdict">
+          <blockquote>The market does not reject properties. It rejects the friction in how those properties are presented. And friction always leaves a fingerprint.</blockquote>
+          <cite>Core Principle &mdash; The 72-Hour Listing Autopsy</cite>
+        </div>
+      </div>
+      <div class="ap d1">
+        <span class="tag">The Silent Killers</span>
+        <p class="bp">Every stagnant listing has at least one buried inside it. Most have all four. They are invisible to anyone who wrote the copy because familiarity kills objectivity.</p>
+        <div class="killers">
+          <div class="kcard"><span class="ktag">Silent Killer 01</span><h4>Passive Voice</h4><p>When copy reads like a brochure instead of a conversation, buyers feel nothing. Feeling nothing is the fastest path to scrolling past.</p><div class="kex">"The kitchen features granite countertops" triggers nothing. "You will make your first cup of coffee in a kitchen that cost someone $40,000 to build" does something completely different.</div></div>
+          <div class="kcard"><span class="ktag">Silent Killer 02</span><h4>The Cliche Tax</h4><p>Every time a buyer reads "move-in ready," "must see," or "motivated seller," their brain flags it as filler and skips ahead. Each cliche costs a fraction of a second of attention. In a scroll, that fraction is a showing you never booked.</p></div>
+          <div class="kcard"><span class="ktag">Silent Killer 03</span><h4>Missing Emotional Resonance</h4><p>Features are what the property has. Resonance is what it gives the person who lives there.</p><div class="kex">"3 bedrooms, 2 bathrooms" is a fact. "The kind of Sunday morning where everyone ends up in the same room without planning it" is a life. Sell the life.</div></div>
+          <div class="kcard"><span class="ktag">Silent Killer 04</span><h4>The Unanswered Question</h4><p>Every buyer has one hesitation they will never voice out loud. If your listing does not preemptively answer it, they vanish in silence. You will never know what stopped them.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="obj-s">
+  <div class="w">
+    <div class="ogrid">
+      <div class="ap">
+        <span class="tag" style="color:var(--gmuted)">Before You Scroll Past This</span>
+        <h2 class="sh" style="color:var(--white)">You Tried AI<br><em style="color:rgba(255,255,255,.38)">Before. We Know.</em></h2>
+        <p class="ob">You pasted your listing into ChatGPT. Asked it to improve the copy. It gave you something polished and a week later nothing had changed. So you quietly filed AI away under "interesting but useless for this."</p>
+        <p class="ob"><strong>That was not an AI problem. That was the wrong instruction entirely.</strong></p>
+        <p class="ob">When you ask an AI to improve your listing, you get a creative response. It never tells you what was specifically wrong because you never asked it to diagnose. <em>You asked it to decorate a house that was already on fire.</em></p>
+        <p class="ob">Think of it the way you would think of a doctor. You do not ask them to "make you sound healthier." You ask them to run the tests and find out what is actually wrong. One gives you advice. The other gives you answers. <strong>This system runs the tests.</strong></p>
+        <div class="analogy-box"><p><strong>A forensic accountant does not sit across from a company's books and guess where the money went.</strong> They follow a specific trail of evidence until the answer reveals itself. What you are holding is the exact same methodology applied to listing copy. Not a guess. A trace. Not a rewrite. A diagnosis.</p></div>
+      </div>
+      <div class="ap d1">
+        <p style="font-family:var(--fm);font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:1rem">The Difference in Plain English</p>
+        <div class="cmpblk">
+          <div class="cmpr">
+            <div class="cmpc"><div class="cmph bad">What Most People Type</div><p>"Can you improve my listing copy? Make it more engaging."</p></div>
+            <div class="cmpc"><div class="cmph good">What This Toolkit Does</div><p>"Act as a forensic analyst. Identify the specific language pattern creating the most friction. Name the exact word. Give me one surgical pivot."</p></div>
+          </div>
+          <div class="cmpr">
+            <div class="cmpc"><p style="font-size:.8rem;color:rgba(255,255,255,.28);font-style:italic">Output: A cleaner version of the same problem.</p></div>
+            <div class="cmpc"><p style="font-size:.8rem;color:rgba(255,255,255,.42);font-style:italic">Output: A clinical diagnosis. The specific word, the specific damage, the specific fix.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="for-s">
+  <div class="w">
+    <div class="ap" style="max-width:640px">
+      <span class="tag">Who This Is Built For</span>
+      <h2 class="sh">Anyone Who Has Written<br><em>Something to Sell Something</em><br>and Cannot Figure Out Why It Is Not Working.</h2>
+    </div>
+    <div class="agrid ap d1">
+      <div class="ac"><span class="aico">🏠</span><h4>Real Estate Agents</h4><p>You took the listing with genuine confidence. Now you are staring at days on market climbing. The Autopsy tool gives you an answer before the next text arrives.</p></div>
+      <div class="ac"><span class="aico">🛍️</span><h4>Etsy Sellers</h4><p>Getting views but not sales. That gap lives inside the copy. The Blind Spot Finder reads your listing the way a tired buyer reads it at 10pm and tells you exactly what makes them leave.</p></div>
+      <div class="ac"><span class="aico">💼</span><h4>Side Hustlers</h4><p>Your service page describes what you do instead of making someone feel what it is like to work with you. One shift, from description to resonance, changes your conversion rate faster than any redesign.</p></div>
+      <div class="ac"><span class="aico">🚀</span><h4>Beginners in Online Business</h4><p>You do not need years of copywriting experience. This is a forensic diagnostic system that explains what to fix and why it matters. No AI account required.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="prod-s" id="product">
+  <div class="w">
+    <div class="pgrid ap">
+      <div>
+        <div class="pbadge">The Product</div>
+        <h2 class="sh">The 72-Hour<br><em>Listing Autopsy</em></h2>
+        <p class="bp">Not a course. Not a template pack. Not a monthly community with a recurring fee. A precision diagnostic toolkit with a live AI engine, five engineered prompts, a clinical protocol, and a 72-hour action framework.</p>
+        <div class="mechblock">
+          <div class="mech-name">The Invisible Friction Analysis</div>
+          <p>The proprietary methodology inside this toolkit. One assumption that has proven true across every stagnant listing: there is always a specific, identifiable friction point inside the copy. Always the message. The system traces it to the source and names it precisely.</p>
+        </div>
+        <div class="fblock">
+          <span class="flabel">What You Will Discover Inside</span>
+          <div class="fb"><div class="fbico"><span class="material-symbols-outlined">arrow_forward</span></div><p><strong>The exact word in most listings</strong> that quietly tells every buyer the seller needs to leave, and what the difference in offer price looks like when a buyer feels that before they ever contact you.</p></div>
+          <div class="fb"><div class="fbico"><span class="material-symbols-outlined">arrow_forward</span></div><p><strong>Why "motivated seller" is the most expensive four syllables</strong> you can put in a listing description, and the three-word replacement that communicates urgency without the damage.</p></div>
+          <div class="fb"><div class="fbico"><span class="material-symbols-outlined">arrow_forward</span></div><p><strong>The unanswered question hiding inside your listing</strong> that every serious buyer is silently carrying when they decide not to book a showing. They will never send you an email about it. They will just leave.</p></div>
+          <div class="fb"><div class="fbico"><span class="material-symbols-outlined">arrow_forward</span></div><p><strong>How to make a 45-day listing feel brand new</strong> without changing the price, changing the photos, or explaining the days on market to anyone. This is the Recalibration Hook inside Tool 04.</p></div>
+          <div class="fb"><div class="fbico"><span class="material-symbols-outlined">arrow_forward</span></div><p><strong>The single question most agents never ask sellers</strong> before writing copy, and how not asking it guarantees something important will always be missing from the description.</p></div>
+          <div class="fb"><div class="fbico"><span class="material-symbols-outlined">arrow_forward</span></div><p><strong>What separates a listing that makes a buyer think "nice"</strong> from one that makes them text their partner at work before they close the browser. It is one paragraph and you will know how to write it in 20 minutes.</p></div>
+        </div>
+      </div>
+      <div>
+        <div class="toolwrap">
+          <div class="twh">What Is Inside The Toolkit</div>
+          <div class="trow" style="background:rgba(0,108,73,.04);border-left:3px solid var(--green)"><div class="tnum" style="background:var(--green)">AI</div><div><h4>The Live Diagnostic Tool</h4><p>Paste your listing, click one button, get your full forensic report. No separate AI account. No extra steps. The diagnosis is built into the product.</p><span class="tstart">Start Here First</span></div></div>
+          <div class="trow"><div class="tnum">01</div><div><h4>The Autopsy Prompt</h4><p>Manual version. Finds the Silent Killer doing the most damage, names it precisely, and gives you a surgical pivot to implement before tomorrow morning.</p></div></div>
+          <div class="trow"><div class="tnum">02</div><div><h4>The Neighborhood Storyteller</h4><p>Converts "close to shops" into a narrative that makes buyers feel what a Tuesday morning there actually feels like.</p></div></div>
+          <div class="trow"><div class="tnum">03</div><div><h4>The Blind Spot Finder</h4><p>Reads your listing the way a skeptical buyer reads it after a long week of scrolling. Surfaces the hesitation you never thought to answer.</p></div></div>
+          <div class="trow"><div class="tnum">04</div><div><h4>The 72-Hour Recalibration</h4><p>Built for listings sitting 30 days or longer. Writes three alternative opening hooks with different emotional angles.</p></div></div>
+          <div class="trow"><div class="tnum">05</div><div><h4>The Process Auditor</h4><p>Audits your pre-listing intake to find where you are collecting features instead of stories, and the questions you are not asking sellers.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how-s">
+  <div class="w">
+    <span class="tag" style="color:rgba(255,255,255,.28)">The Process</span>
+    <h2 class="sh" style="color:var(--white);max-width:500px">From Purchase<br><em style="color:rgba(255,255,255,.38)">To Diagnosis in 20 Minutes</em></h2>
+    <div class="hgri ap">
+      <div class="hst"><span class="hsn">01</span><h4>Purchase and Access</h4><p>One payment. <strong>Instant access.</strong> Open the product in any browser. No login, no app, no additional account.</p></div>
+      <div class="hst"><span class="hsn">02</span><h4>Paste Your Listing</h4><p>Find the live diagnostic tool at the top of the product page. <strong>Paste your full description.</strong> Every sentence you have published.</p></div>
+      <div class="hst"><span class="hsn">03</span><h4>Read the Diagnosis</h4><p>The Listing Vitals Engine runs a 5-layer scan and returns your complete forensic report. <strong>Read every finding before you act on any.</strong></p></div>
+      <div class="hst" style="border-right:none"><span class="hsn">04</span><h4>Implement Within 72 Hours</h4><p>Fix the highest-priority issue. Republish. Follow the 72-hour protocol. <strong>The algorithm gives recently updated listings a fresh window.</strong> Use it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="proof-s" id="proof">
+  <div class="w">
+    <span class="tag">Case Study</span>
+    <h2 class="sh" style="max-width:500px">The Numbers.<br><em>No Elaboration Needed.</em></h2>
+    <div class="nband ap">
+      <div class="nc"><div class="bign">47</div><div class="nlbl">Days on Market</div><p class="ndesc">How long the property sat without a serious offer. A price reduction was a week away.</p></div>
+      <div class="nc"><div class="bign">20</div><div class="nlbl">Minutes to Diagnose</div><p class="ndesc">Total time from pasting the listing into the Autopsy tool to a complete clinical diagnosis.</p></div>
+      <div class="nc"><div class="bign">12</div><div class="nlbl">Days to Pending</div><p class="ndesc">Three copy adjustments. No price change. No new photography. Multiple offers arrived.</p></div>
+    </div>
+    <div class="psgrid ap d1">
+      <div class="pstory">
+        <h3>What Actually Happened at 1422 Northview</h3>
+        <p class="bp">Four-bedroom. Solid neighborhood. Fair price. Professional photography. It sat untouched for seven weeks while every conversation with the seller became more uncomfortable.</p>
+        <p class="bp">The forensic audit identified one phrase in the opening hook framing the seller as someone who needed to move, not chosen to. That told every buyer there was significant room to negotiate before they ever made contact.</p>
+        <p class="bp">Three copy adjustments. No price reduction. No new photos. Multiple offers inside two weeks. <strong>The house had not changed. The story around it had.</strong></p>
+        <p class="bp">The pen really is mightier than the price cut.</p>
+      </div>
+      <div class="tstack">
+        <div class="tcard"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>"Ran the Autopsy tool on a listing sitting for 38 days. It found a phrase I had written myself and never questioned. Changed it. Had a showing request within 48 hours."</blockquote><div class="rev"><div class="ava">MK</div><div><div class="rn">Marcus K.</div><div class="rr">Real Estate Agent, 9 Years</div></div></div></div>
+        <div class="tcard"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>"My top Etsy listing had been dead for two months. Ran the Blind Spot Finder. Rewrote two sentences based on the output. Sales came back within the week."</blockquote><div class="rev"><div class="ava">TA</div><div><div class="rn">Tanya A.</div><div class="rr">Etsy Seller, Ceramics</div></div></div></div>
+        <div class="tcard"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>"I was about to rebuild my entire Fiverr profile. Ran the Autopsy first. One line was making me sound desperate for work. One edit. Conversion rate went up that same week."</blockquote><div class="rev"><div class="ava">DJ</div><div><div class="rn">Devon J.</div><div class="rr">Freelance Designer, Fiverr</div></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="qual-s">
+  <div class="wm">
+    <span class="tag">Honest Clarity</span>
+    <h2 class="sh" style="max-width:460px">Is This<br><em>Actually For You?</em></h2>
+    <div class="qgrid ap">
+      <div class="qc yes">
+        <div class="qch"><span class="material-symbols-outlined" style="font-size:.9rem">check_circle</span>This Is For You If</div>
+        <div class="qi"><span class="material-symbols-outlined">check</span><p>You have a listing not performing and cannot identify the cause</p></div>
+        <div class="qi"><span class="material-symbols-outlined">check</span><p>You are willing to spend 20 minutes on a real diagnosis first</p></div>
+        <div class="qi"><span class="material-symbols-outlined">check</span><p>You want to find the problem and fix it yourself</p></div>
+        <div class="qi"><span class="material-symbols-outlined">check</span><p>You are open to hearing the copy is the issue</p></div>
+        <div class="qi"><span class="material-symbols-outlined">check</span><p>You want a tool that works the moment you open it</p></div>
+      </div>
+      <div class="qc no">
+        <div class="qch"><span class="material-symbols-outlined" style="font-size:.9rem">cancel</span>This Is Not For You If</div>
+        <div class="qi"><span class="material-symbols-outlined">close</span><p>You want someone else to do all the thinking and all the fixing</p></div>
+        <div class="qi"><span class="material-symbols-outlined">close</span><p>You will not implement the fix within 72 hours</p></div>
+        <div class="qi"><span class="material-symbols-outlined">close</span><p>You are fully convinced the market alone is to blame</p></div>
+        <div class="qi"><span class="material-symbols-outlined">close</span><p>You are looking for a community or coaching structure</p></div>
+        <div class="qi"><span class="material-symbols-outlined">close</span><p>You want a magic solution requiring zero engagement</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="price-s" id="pricing">
+  <div class="ws">
+    <div style="text-align:center" class="ap">
+      <span class="tag" style="display:block;text-align:center">Investment</span>
+      <h2 class="sh" style="text-align:center">One Payment.<br><em>Use It on Every Listing You Ever Work With.</em></h2>
+      <p class="bp" style="text-align:center;max-width:460px;margin:0 auto">No subscription. No renewal. No upsell waiting around the corner. Pay once. Own it forever.</p>
+    </div>
+    <div class="pcard ap d1">
+      <div class="pflag">Lifetime License</div>
+      <p style="font-family:var(--fm);font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)">The 72-Hour Listing Autopsy</p>
+      <div class="prow"><span class="pcur">$</span><span class="pnum">37</span></div>
+      <p class="pnote">One-time payment &nbsp;&middot;&nbsp; Instant digital delivery</p>
+      <div class="cbuls">
+        <div class="cbi"><span class="material-symbols-outlined">check_circle</span><span><strong>Live AI diagnostic engine</strong> built in, no separate AI account needed</span></div>
+        <div class="cbi"><span class="material-symbols-outlined">check_circle</span><span><strong>5 forensic AI prompts</strong> with full diagnostic instructions for each situation</span></div>
+        <div class="cbi"><span class="material-symbols-outlined">check_circle</span><span><strong>The Invisible Friction Analysis method</strong> explained in full</span></div>
+        <div class="cbi"><span class="material-symbols-outlined">check_circle</span><span><strong>The 72-hour action framework</strong> so the diagnosis becomes a result</span></div>
+        <div class="cbi"><span class="material-symbols-outlined">check_circle</span><span><strong>Lifetime access</strong> including all future updates</span></div>
+      </div>
+      <a class="btn-buy" href="https://payhip.com/b/Og6Pd" target="_blank"><span class="material-symbols-outlined" style="font-size:1.1rem">lock_open</span>Get Instant Access For $37</a>
+      <div class="gbox"><span class="material-symbols-outlined">verified_user</span><p><strong>30-Day Full Refund. No Questions Asked.</strong> Run the diagnostic on your actual listing. If you do not get a single clear, actionable finding in the first session, send one email and every dollar comes back.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="faq-s">
+  <div class="wm">
+    <span class="tag">Common Questions</span>
+    <h2 class="sh" style="max-width:480px">The Answers Before<br><em>You Even Have to Ask</em></h2>
+    <div class="fgrid ap">
+      <div class="fi"><h4>Do I need a paid AI subscription?</h4><p>No. The product has a live AI diagnostic tool built directly into it. Paste your listing and get your diagnosis without opening any other app or account.</p></div>
+      <div class="fi"><h4>I sell on Etsy, not real estate. Will this work?</h4><p>Yes. The silent killers that stall a property listing are identical to the ones that stall a product listing. The tool adapts to any context.</p></div>
+      <div class="fi"><h4>How long does a session actually take?</h4><p>The live diagnostic takes under 2 minutes to run. Reading the full output and identifying your highest-priority fix takes another 15 minutes. Total: under 20 minutes.</p></div>
+      <div class="fi"><h4>I tried AI before and got generic output. Why is this different?</h4><p>Because the instruction is structurally different. The prompts inside are written as diagnostic interrogation protocols, not creative requests. The output is clinical, specific, and actionable.</p></div>
+      <div class="fi"><h4>What format is the product?</h4><p>A single HTML file that opens in any browser on any device. The live AI diagnostic tool requires an internet connection. The 5 manual prompts work completely offline.</p></div>
+      <div class="fi"><h4>What if the output is not useful?</h4><p>Almost always caused by a short paste. Paste the complete description, every sentence. If you still get nothing useful, the 30-day refund processes immediately with one email.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="fcta-s">
+  <div class="w">
+    <h2 class="fh ap">Day 44 Is a Choice.</h2>
+    <p class="fsub ap d1">There is a word, a phrase, a missing emotional note inside your listing right now. The buyer who should be booking a showing has already moved on. But the next one does not have to. <strong>Twenty minutes. One diagnosis. One fix.</strong></p>
+    <div class="ap d2"><a class="btn-h" href="https://payhip.com/b/Og6Pd" target="_blank" style="margin:0 auto;display:inline-flex"><span class="material-symbols-outlined" style="font-size:1.1rem">biotech</span>Find the Flaw. Fix the Listing.</a></div>
+    <p class="ap d3" style="margin-top:1.75rem;font-family:var(--fm);font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.16)">$37 One-Time &nbsp;&middot;&nbsp; Lifetime Access &nbsp;&middot;&nbsp; 30-Day Refund Guarantee</p>
+  </div>
+</section>
+
+<footer>
+  <div class="fi2">
+    <div class="flogo">72-Hour Listing Autopsy</div>
+    <div class="flinks"><a href="#">Refund Policy</a><a href="#">Privacy</a><a href="mailto:support@bluecheeseprince.com">Support</a></div>
+  </div>
+</footer>
+
+</div><!-- end sales-page -->
+
+<!-- ========================================== -->
+<!-- PAGE 2: THANK YOU PAGE                     -->
+<!-- ========================================== -->
+<div id="thankyou-page" class="page">
+<div class="ty-grid-bg"></div>
+<div class="ty-glow"></div>
+<div class="ty-wrap">
+  <div class="ty-content">
+    <span class="ty-brand">72-Hour Listing Autopsy</span>
+    <div class="ty-badge"><span class="pulse-dot"></span>Payment Confirmed &nbsp;&mdash;&nbsp; Access Unlocked</div>
+    <h1 class="ty-h">You Are In.<br><em>The Diagnosis Starts Now.</em></h1>
+    <p class="ty-sub">Your purchase is confirmed. <strong>Click the button below to open your complete toolkit.</strong> Before you start, read the four steps underneath. They take 60 seconds and determine whether you get a clinical diagnosis or a generic one.</p>
+
+    <div class="dl-card">
+      <div class="dl-head">
+        <span class="dl-title">The 72-Hour Listing Autopsy</span>
+        <span class="dl-meta">Live AI Tool Included &nbsp;|&nbsp; Works in Any Browser</span>
+      </div>
+      <div class="dl-includes">
+        <div class="dl-item"><span class="material-symbols-outlined">check_circle</span>Live AI Diagnostic Engine</div>
+        <div class="dl-item"><span class="material-symbols-outlined">check_circle</span>72-Hour Action Framework</div>
+        <div class="dl-item"><span class="material-symbols-outlined">check_circle</span>5 Forensic Manual Prompts</div>
+        <div class="dl-item"><span class="material-symbols-outlined">check_circle</span>The Silent Killers Breakdown</div>
+        <div class="dl-item"><span class="material-symbols-outlined">check_circle</span>The First Win Challenge</div>
+        <div class="dl-item"><span class="material-symbols-outlined">check_circle</span>Lifetime Access Included</div>
+      </div>
+      <a class="btn-dl" href="#product" onclick="goTo('product')">
+        <span class="material-symbols-outlined" style="font-size:1.1rem">open_in_new</span>
+        Open Your Toolkit Now
+      </a>
+    </div>
+
+    <div class="steps-block">
+      <span class="steps-lbl">Do This Right Now, In This Order</span>
+      <div class="step-row"><div class="step-idx">1</div><div><h4>Open the toolkit above</h4><p>It opens directly in this browser window. Bookmark the page so you can return any time from any device.</p></div></div>
+      <div class="step-row"><div class="step-idx">2</div><div><h4>Go straight to the Live Diagnostic tool at the top</h4><p>No setup. No separate AI account. <strong>Paste your listing and hit Run the Autopsy.</strong> The engine runs your complete forensic scan in under 2 minutes.</p></div></div>
+      <div class="step-row"><div class="step-idx">3</div><div><h4>Read every tab of the diagnosis before you implement anything</h4><p>Findings, Rewrite, and the 72-Hour Protocol are all there. <strong>Read the full output first.</strong> The highest-priority fix is labeled for you.</p></div></div>
+      <div class="step-row"><div class="step-idx">4</div><div><h4>Implement the top fix and republish within 72 hours</h4><p>Use the rewritten description or apply the phrase replacements to your existing copy. <strong>Speed after diagnosis is everything.</strong> The algorithm gives recently updated listings a fresh window. Do not waste it.</p></div></div>
+    </div>
+
+    <div class="note-box">
+      <span class="material-symbols-outlined">info</span>
+      <p><strong>Important:</strong> The quality of the diagnostic output is directly proportional to how much of your listing you paste in. Paste the full description, every sentence you have published. Half the description means half the answer. Full input, full output. That is the only rule that matters.</p>
+    </div>
+
+    <div class="ty-footer">
+      <span class="ty-fl-brand">72-Hour Listing Autopsy</span>
+      <a class="support-lnk" href="mailto:support@bluecheeseprince.com"><span class="material-symbols-outlined" style="font-size:.85rem">mail</span>&nbsp;support@bluecheeseprince.com</a>
+      <span style="font-family:var(--fm);font-size:.58rem;letter-spacing:.1em;color:rgba(255,255,255,.12);text-transform:uppercase">30-Day Refund Guarantee Active</span>
+    </div>
+  </div>
+</div>
+</div><!-- end thankyou-page -->
+
+<!-- ========================================== -->
+<!-- PAGE 3: PRODUCT TOOLKIT                    -->
+<!-- ========================================== -->
+<div id="product-page" class="page prod-page">
+
+<nav class="prod-nav">
+  <div class="prod-nav-inner">
+    <div class="prod-logo">72-Hour <em>Listing Autopsy</em></div>
+    <div class="prod-badge"><span class="pulse-dot"></span>Access Active</div>
+  </div>
+</nav>
+
+<section class="access-hero">
+  <div class="access-fg"></div><div class="access-glow"></div>
+  <div class="w">
+    <div class="access-status"><span class="pulse-dot"></span>Listing Vitals Engine: Online</div>
+    <div class="access-grid">
+      <div>
+        <p style="font-family:var(--fm);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:1.25rem">Your Diagnostic System Is Ready.</p>
+        <h1 style="font-family:var(--fd);font-size:clamp(2.8rem,6vw,4.5rem);font-weight:600;font-style:italic;line-height:1.06;letter-spacing:-.025em;color:var(--white);margin-bottom:1.5rem">Stop Guessing.<br>Start Diagnosing.</h1>
+        <p style="font-size:1.1rem;color:rgba(255,255,255,.5);max-width:480px;line-height:1.75;margin-bottom:1rem">The live diagnostic tool is one scroll away. Paste your listing. Get your complete forensic report. No other app needed. No other account needed. The diagnosis is built into what you are holding right now.</p>
+        <p style="font-size:1.1rem;color:rgba(255,255,255,.5);max-width:480px;line-height:1.75">Most people will spend another month adjusting the price. You will spend the next 20 minutes finding the actual problem. That is the difference.</p>
+      </div>
+      <div>
+        <p style="font-family:var(--fm);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:1rem">How This Works</p>
+        <div class="step-cards">
+          <div class="step-card"><div class="step-number">STEP 01</div><h3>Open the Tool</h3><p>Scroll to Chapter 01 below. The live diagnostic is waiting. No setup required.</p></div>
+          <div class="step-card"><div class="step-number">STEP 02</div><h3>Paste Your Listing</h3><p>The full description. Every sentence you have published. Generic in equals generic out.</p></div>
+          <div class="step-card"><div class="step-number">STEP 03</div><h3>Read the Diagnosis</h3><p>Check all four tabs. Findings, rewrite, and the 72-hour protocol are all there.</p></div>
+          <div class="step-card"><div class="step-number">STEP 04</div><h3>Act Within 72 Hours</h3><p>Implement the top fix. Republish. The algorithm gives updated listings a fresh window.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- CHAPTER 01: LIVE DIAGNOSTIC TOOL             -->
+<!-- ============================================ -->
+<section style="background:var(--white);padding:5rem 0;border-bottom:1px solid var(--border)" id="live-tool">
+  <div class="wm">
+    <div class="chap-label"><span class="ctag">Chapter 01</span></div>
+    <div class="live-tool-intro"><span class="pulse-dot" style="background:var(--green)"></span>Live Diagnostic Tool</div>
+    <h2 style="font-family:var(--fd);font-size:clamp(2rem,4vw,3rem);font-weight:600;line-height:1.08;letter-spacing:-.02em;margin-bottom:1.25rem;max-width:600px">Paste Your Listing.<br><em style="font-style:italic">Get Your Answer.</em></h2>
+    <p class="bp" style="max-width:620px">No separate AI account needed. Paste your listing below and the Listing Vitals Engine runs a 5-layer forensic scan in real time. You get the exact phrases causing damage, a full rewrite, and a 72-hour recovery protocol, all in one place.</p>
+
+    <!-- ===== THE DIAGNOSTIC TOOL ===== -->
+    <div class="diag-tool" id="diag-wrap">
+
+      <!-- STATE 1: INPUT -->
+      <div id="ds-input">
+        <div class="diag-hdr">
+          <span style="display:flex;align-items:center"><span class="diag-dot"></span>Listing Vitals Engine</span>
+          <span style="color:rgba(255,255,255,.3);font-size:.52rem">READY FOR INPUT</span>
+        </div>
+        <div class="diag-body">
+          <div class="diag-stats">
+            <div class="diag-stat"><div class="diag-stat-num">91%</div><div class="diag-stat-lbl">of stale listings share the same 3 copy failures</div></div>
+            <div class="diag-stat"><div class="diag-stat-num">72hr</div><div class="diag-stat-lbl">algorithm window before permanent visibility loss</div></div>
+            <div class="diag-stat" style="border-right:none"><div class="diag-stat-num">14</div><div class="diag-stat-lbl">words is the average change that restores full conversion</div></div>
+          </div>
+          <textarea id="listing-input" class="diag-ta" placeholder="Paste your MLS description, Zillow copy, or any listing text here. The more complete the input, the more precise the diagnosis." oninput="document.getElementById('diag-char').textContent=this.value.length+' characters'"></textarea>
+          <div class="diag-char" id="diag-char">0 characters</div>
+          <div class="diag-err" id="diag-err"></div>
+          <button class="diag-run-btn" onclick="runDiag()">
+            <span class="material-symbols-outlined" style="font-size:1rem">search</span>
+            Run the Autopsy
+          </button>
+        </div>
+      </div>
+
+      <!-- STATE 2: SCANNING -->
+      <div id="ds-scan" style="display:none">
+        <div class="diag-hdr">
+          <span style="display:flex;align-items:center"><span class="diag-dot"></span>Listing Vitals Engine</span>
+          <span style="color:rgba(255,255,255,.3);font-size:.52rem">SCANNING</span>
+        </div>
+        <div class="diag-scan">
+          <h3 class="diag-scan-h">Autopsy in Progress</h3>
+          <p class="diag-scan-step" id="diag-step-txt">Initializing...</p>
+          <div class="diag-pb-out"><div class="diag-pb-in" id="diag-pb" style="width:0%"></div></div>
+          <div class="diag-steps-list" id="diag-steps-list"></div>
+        </div>
+      </div>
+
+      <!-- STATE 3: RESULTS -->
+      <div id="ds-results" style="display:none">
+
+        <div class="diag-res-hdr">
+          <div>
+            <div style="font-family:var(--fm);font-size:.52rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:.25rem">AUTOPSY COMPLETE</div>
+            <div class="diag-res-title">Forensic Findings Report</div>
+          </div>
+          <button class="diag-new-btn" onclick="resetDiag()">
+            <span class="material-symbols-outlined" style="font-size:.9rem">refresh</span>
+            New Autopsy
+          </button>
+        </div>
+
+        <!-- Score + primary diagnosis -->
+        <div class="diag-score-card">
+          <div class="diag-score-wrap">
+            <div class="diag-score-num" id="d-score">0</div>
+            <div class="diag-score-lbl">Health Score</div>
+          </div>
+          <div class="diag-score-info">
+            <span class="dbadge CRITICAL" id="d-badge">CRITICAL</span>
+            <p style="font-family:var(--fm);font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-bottom:.75rem" id="d-days"></p>
+            <h4 style="font-family:var(--fd);font-size:1rem;font-weight:600;margin-bottom:.5rem">Primary Diagnosis</h4>
+            <p style="font-size:.9rem;color:var(--muted);line-height:1.75" id="d-diag"></p>
+          </div>
+        </div>
+
+        <!-- Stats grid -->
+        <div class="diag-stat-grid">
+          <div class="dsg-cell"><div class="dsg-num" id="d-sg-score">0</div><div class="dsg-lbl">Health Score</div></div>
+          <div class="dsg-cell"><div class="dsg-num" id="d-sg-level">-</div><div class="dsg-lbl">Decay Level</div></div>
+          <div class="dsg-cell"><div class="dsg-num" id="d-sg-days" style="color:var(--red)">-</div><div class="dsg-lbl">Days to Invisible</div></div>
+          <div class="dsg-cell"><div class="dsg-num" id="d-sg-phrases">0</div><div class="dsg-lbl">Critical Phrases</div></div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="diag-tabs">
+          <button class="diag-tab on" data-tab="findings" onclick="switchDTab('findings')">Findings</button>
+          <button class="diag-tab" data-tab="rewrite" onclick="switchDTab('rewrite')">Rewrite</button>
+          <button class="diag-tab" data-tab="protocol" onclick="switchDTab('protocol')">72hr Protocol</button>
+        </div>
+
+        <!-- Tab: Findings -->
+        <div class="diag-tc on" id="dt-findings">
+          <p style="font-family:var(--fm);font-size:.52rem;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:.75rem">CRITICAL PHRASES FOUND IN YOUR LISTING</p>
+          <div id="d-phrases"></div>
+          <p style="font-family:var(--fm);font-size:.52rem;letter-spacing:.16em;text-transform:uppercase;color:var(--green);margin:.25rem 0 .75rem">MODULE FINDINGS</p>
+          <div id="d-modules"></div>
+        </div>
+
+        <!-- Tab: Rewrite -->
+        <div class="diag-tc" id="dt-rewrite">
+          <div class="drw-card">
+            <div class="drw-hdr">
+              <span class="drw-title">Storyteller Authority Module Output</span>
+              <button class="drw-cpbtn" onclick="copyRewriteTxt(this)">
+                <span class="material-symbols-outlined" style="font-size:.9rem">content_copy</span>
+                Copy Text
+              </button>
+            </div>
+            <div class="drw-body">
+              <p class="drw-text" id="d-rewrite"></p>
+            </div>
+          </div>
+          <div class="diag-info">
+            <span class="material-symbols-outlined">info</span>
+            <p>All critical phrases have been replaced. The narrative architecture of top 1% listings has been applied. Use this version as written or adjust the specifics to match your property details before republishing.</p>
+          </div>
+        </div>
+
+        <!-- Tab: Protocol -->
+        <div class="diag-tc" id="dt-protocol">
+          <p style="font-family:var(--fm);font-size:.52rem;letter-spacing:.16em;text-transform:uppercase;color:var(--green);margin-bottom:1rem">72 HOUR RECALIBRATION PROTOCOL</p>
+          <div id="d-protocol"></div>
+          <div class="diag-info" style="margin-top:1.5rem">
+            <span class="material-symbols-outlined">warning</span>
+            <p>If visibility has not recovered by hour 72, the issue is not copy. It is pricing psychology. Revisit the Buyer Psychology Decoder findings before adjusting the list price.</p>
+          </div>
+        </div>
+
+      </div><!-- end ds-results -->
+    </div><!-- end diag-tool -->
+
+    <p style="font-family:var(--fm);font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-top:1.25rem">Run as many autopsies as you need. Every listing. Every time. Lifetime access included.</p>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- CHAPTER 02: THE PROBLEM                      -->
+<!-- ============================================ -->
+<section class="prob-sec" style="padding:6rem 0">
+  <div class="w">
+    <div class="chap-label"><span class="ctag">Chapter 02</span></div>
+    <div class="prob-grid">
+      <div>
+        <h2 style="font-family:var(--fd);font-size:clamp(2rem,4vw,3rem);font-weight:600;line-height:1.1;letter-spacing:-.02em;margin-bottom:1.75rem">Your Listing Isn't Slow.<br><em style="font-style:italic">It's Bleeding.</em></h2>
+        <p class="bp">Here is something nobody tells you when a listing sits on the market for 30, 45, 60 days: the market is not ignoring the property. The market is rejecting the message.</p>
+        <p class="bp">Think about it the way a doctor thinks about a patient. You do not walk into a hospital, hear the symptoms, and immediately prescribe medication. You run tests first. You diagnose before you treat. But most agents skip straight to treatment, cutting the price, refreshing photos, running another ad, hoping something sticks. None of that touches the actual wound.</p>
+        <p class="bp">The wound is copy. Language that sounds like every other listing on the market. Words that feel safe but say nothing. Descriptions that list features instead of telling the story of what it actually feels like to live there.</p>
+        <p class="bp">A buyer scrolls past 40 listings in an hour. They are not reading yours carefully. They are reacting to it. And if the first three sentences do not create a feeling, they are already gone.</p>
+        <div style="background:var(--black);color:var(--white);padding:2.5rem;margin-top:2rem">
+          <p style="font-family:var(--fd);font-size:1.5rem;font-style:italic;line-height:1.35;margin-bottom:1rem">"The market doesn't reject the property. It rejects the friction in how the property is presented."</p>
+          <p style="font-family:var(--fm);font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gmuted)">Core Principle | Forensic Listing Method</p>
+        </div>
+      </div>
+      <div>
+        <p style="font-family:var(--fm);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);margin-bottom:1.5rem">The Four Silent Killers</p>
+        <div class="killer-list">
+          <div class="killer-item"><div class="k-icon">01</div><div><h4>Passive Voice</h4><p>Copy that reads like a brochure instead of a conversation creates no emotional response. No emotion means no showing. "The kitchen features granite countertops" is the listing equivalent of a user manual.</p></div></div>
+          <div class="killer-item"><div class="k-icon">02</div><div><h4>The Cliche Tax</h4><p>Words like "move-in ready," "motivated seller," "must see," and "cozy" cause buyers to discount what comes next. The brain skips them automatically. Each one costs you a fraction of attention. In a scroll, that fraction is everything.</p></div></div>
+          <div class="killer-item"><div class="k-icon">03</div><div><h4>Missing Emotional Resonance</h4><p>"3 bedrooms" is a feature. "The kind of Sunday morning where the kids pile into your room and nobody has anywhere to be" is resonance. Only one of those creates urgency to schedule a showing.</p></div></div>
+          <div class="killer-item"><div class="k-icon">04</div><div><h4>The Unanswered Question</h4><p>Every buyer has one hesitation they will not voice out loud. If your listing does not preemptively address it, they move on. Finding that unanswered question is exactly what the Blind Spot Finder is designed to do.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- CHAPTER 03: THE PROTOCOL                     -->
+<!-- ============================================ -->
+<section class="proto-sec">
+  <div class="w">
+    <div class="chap-label"><span class="ctag">Chapter 03</span></div>
+    <div style="max-width:700px;margin-bottom:3rem">
+      <h2 style="font-family:var(--fd);font-size:clamp(2rem,4vw,3rem);font-weight:600;line-height:1.1;letter-spacing:-.02em;margin-bottom:1.25rem">The Protocol.<br><em style="font-style:italic">Follow It Exactly.</em></h2>
+      <p class="bp">The live diagnostic handles the heavy lifting automatically. These rules apply when you use the manual prompts in Chapter 04 and when you implement your fixes.</p>
+    </div>
+    <div class="proto-grid">
+      <div class="proto-step"><div class="proto-num">01</div><h3>Full Listing Input</h3><p>Paste your complete listing description. Not a summary. The actual words you have published. The diagnosis is only as precise as the input you give it.</p></div>
+      <div class="proto-step"><div class="proto-num">02</div><h3>Read Before You Act</h3><p>Read the complete output before you change a single word. The highest-priority fix is labeled. Go there first. Do not try to fix everything at once.</p></div>
+      <div class="proto-step"><div class="proto-num">03</div><h3>One Fix at a Time</h3><p>Implement the top finding. Republish. Monitor for 48 hours. Then return for the next fix. Stacking changes without measuring makes it impossible to know what worked.</p></div>
+      <div class="proto-step" style="border-right:none"><div class="proto-num">04</div><h3>72 Hours is Everything</h3><p>Platform algorithms treat recently updated listings like new ones. The first 72 hours after a change are your highest visibility window. Do not waste them.</p></div>
+    </div>
+    <div style="margin-top:3rem">
+      <p style="font-family:var(--fm);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);margin-bottom:1.5rem">The 6 Rules of Engagement</p>
+      <div class="rules-grid">
+        <div class="rule-card"><div class="rule-num">Rule 01</div><h4>Paste the full description</h4><p>Half the description means half the diagnosis. Every sentence you have published goes in.</p></div>
+        <div class="rule-card"><div class="rule-num">Rule 02</div><h4>Read before you act</h4><p>The output is only useful if you read every word of it before you change anything.</p></div>
+        <div class="rule-card"><div class="rule-num">Rule 03</div><h4>Implement the top fix first</h4><p>One surgical pivot beats five scattered edits every time. The priority ranking is there for a reason.</p></div>
+        <div class="rule-card"><div class="rule-num">Rule 04</div><h4>Republish within 72 hours</h4><p>The algorithm rewards recency. Every hour past 72 is a window closing.</p></div>
+        <div class="rule-card"><div class="rule-num">Rule 05</div><h4>Never add more photos first</h4><p>Polishing the presentation of a broken message sends more people away faster. Fix the message first.</p></div>
+        <div class="rule-card"><div class="rule-num">Rule 06</div><h4>Price is the last resort</h4><p>A price drop is irreversible. A copy fix is free. Run the diagnosis before you hand back equity.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- CHAPTER 04: THE MANUAL ARSENAL               -->
+<!-- ============================================ -->
+<section class="arsenal-sec">
+  <div class="w">
+    <div class="chap-label"><span class="ctag">Chapter 04</span></div>
+    <div class="arsenal-hdr">
+      <div>
+        <h2 style="font-family:var(--fd);font-size:clamp(2rem,4vw,3rem);font-weight:600;line-height:1.1;letter-spacing:-.02em">The Manual Arsenal.<br><em style="font-style:italic">Go Deeper.</em></h2>
+        <p style="font-size:.875rem;color:var(--muted);margin-top:.75rem;max-width:560px">The live diagnostic handles the primary analysis. These 5 prompts are precision tools for specific situations that go beyond the standard scan. Copy any prompt, paste it into Claude.ai or ChatGPT, and add your listing below it.</p>
+      </div>
+    </div>
+
+    <!-- TOOL 01: THE AUTOPSY PROMPT -->
+    <div class="tool-block">
+      <div>
+        <span class="tool-tag">Diagnostic 01</span>
+        <h3 style="font-family:var(--fd);font-size:1.85rem;font-weight:600;line-height:1.2;margin-bottom:1.25rem">The Autopsy Prompt</h3>
+        <div class="tool-detail"><h4>When to Use</h4><p>Your starting point for any stagnant listing. Use this when you want a full forensic audit and a specific, single-word or single-phrase pivot to implement today.</p></div>
+        <div class="tool-detail"><h4>What It Finds</h4><p>The primary Silent Killer. The one specific word or phrase doing the most damage to your listing's conversion rate. Not a list of suggestions. A verdict.</p></div>
+        <div class="tool-detail"><h4>Expected Output</h4><p>A direct diagnosis identifying the friction source, the psychological damage it creates in the buyer's mind, and a precise one-sentence replacement that removes the problem without losing any of the substance.</p></div>
+        <div class="exp-out"><div class="exp-lbl"><span class="material-symbols-outlined" style="font-size:.85rem">tips_and_updates</span>What You Get</div><p>"The phrase 'cozy retreat' in your opening hook is signaling a compromise to buyers, not a feature. Replace with: 'a layout that makes every room feel intentional' and watch what happens to the first three-second reaction."</p></div>
+      </div>
+      <div>
+        <div class="prompt-block">
+          <p class="prompt-text" id="p01">You are a forensic copywriter specializing in real estate listings that have stopped performing. Your job is not to rewrite anything. Your job is to diagnose.
+
+Here is my listing:
+
+<span class="ph">[PASTE YOUR FULL LISTING DESCRIPTION HERE]</span>
+
+Read this listing as a forensic analyst, not a creative writer. Then answer only these three questions:
+
+1. What is the single word or phrase in this copy that is causing the most conversion damage? Name it exactly. Do not summarize it. Quote it.
+
+2. What specific psychological response does that word or phrase create in the buyer's mind? Be clinical. Not "it sounds negative." Tell me the exact thought pattern it triggers.
+
+3. Give me one replacement. Not a rewrite. One surgical swap. The exact phrase that corrects the damage without losing the meaning.
+
+That is the entire output. Nothing else. No preamble. No encouragement. Just the three answers.</p>
+          <button class="copy-btn" onclick="copyPrompt('p01',this)"><span class="material-symbols-outlined" style="font-size:1rem">content_copy</span> Copy This Prompt</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- TOOL 02: THE NEIGHBORHOOD STORYTELLER -->
+    <div class="tool-block">
+      <div>
+        <span class="tool-tag">Diagnostic 02</span>
+        <h3 style="font-family:var(--fd);font-size:1.85rem;font-weight:600;line-height:1.2;margin-bottom:1.25rem">The Neighborhood Storyteller</h3>
+        <div class="tool-detail"><h4>When to Use</h4><p>When your listing describes the location accurately but fails to make the buyer feel what it is like to actually live there. Proximity to amenities is a feature. The morning walk to the coffee shop is a life.</p></div>
+        <div class="tool-detail"><h4>What It Finds</h4><p>The emotional gap between your location description and what buyers actually buy when they buy a neighborhood. It writes the version that makes them picture themselves there before they ever visit.</p></div>
+        <div class="exp-out"><div class="exp-lbl"><span class="material-symbols-outlined" style="font-size:.85rem">tips_and_updates</span>What You Get</div><p>A complete neighborhood narrative that reads like a scene from a life, not a list of distances. Written to trigger the specific emotion that turns a browser into a booking.</p></div>
+      </div>
+      <div>
+        <div class="prompt-block">
+          <p class="prompt-text" id="p02">I need you to rewrite the neighborhood section of my property listing. Not the property itself. The neighborhood.
+
+Here is what I currently have:
+
+<span class="ph">[PASTE YOUR CURRENT NEIGHBORHOOD DESCRIPTION OR LIST OF NEARBY AMENITIES]</span>
+
+Here is the neighborhood context:
+
+<span class="ph">[ADD ANY DETAILS: nearby schools, coffee shops, parks, transit, walkability, vibe, type of residents, weekend activity, etc.]</span>
+
+Your job is to convert facts into feeling. Do not list distances. Do not list features. Write a short paragraph, 3 to 5 sentences, that makes a buyer feel what a Tuesday morning in this neighborhood actually looks like. The goal is not accuracy. The goal is resonance. Make them want to live there before they know why.</p>
+          <button class="copy-btn" onclick="copyPrompt('p02',this)"><span class="material-symbols-outlined" style="font-size:1rem">content_copy</span> Copy This Prompt</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECONDARY TOOLS GRID -->
+    <div>
+      <p style="font-family:var(--fm);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);margin-bottom:1.5rem;margin-top:1rem">Additional Diagnostic Tools</p>
+      <div class="sec-tools">
+        <div class="sec-tool">
+          <span class="tool-tag">Diagnostic 03</span>
+          <h4>The Blind Spot Finder</h4>
+          <p class="sdesc">Reads your listing the way a skeptical buyer reads it after a long week of scrolling. Surfaces the hesitation you never thought to answer, the unanswered question that every serious buyer carries but never sends you an email about.</p>
+          <div class="mini-prompt">"Read this listing as a buyer who has already seen 35 listings this week and is tired, skeptical, and waiting to be disappointed. What is the first thing that makes you hesitate? What question does this listing raise but never answer?"</div>
+          <textarea id="p03" style="display:none">You are a skeptical buyer. You have scrolled through 35 listings this week. You are tired. You are waiting to be disappointed. You have seen every cliche, every overpromise, every vague description that means nothing.
+
+Here is my listing:
+
+[PASTE YOUR FULL LISTING DESCRIPTION HERE]
+
+Read it as that buyer. Then tell me: What is the first thing that makes you hesitate (not the price, the copy itself)? What is the one question this listing raises but never answers? What is the hidden liability that a careful buyer will spot immediately that I have not addressed?
+
+Do not soften this. I need the unfiltered version. My time is too valuable for comfortable lies.</textarea>
+          <button class="scopy-btn" onclick="copyTextarea('p03',this)"><span class="material-symbols-outlined" style="font-size:.9rem">content_copy</span>Copy Full Prompt</button>
+        </div>
+        <div class="sec-tool">
+          <span class="tool-tag">Diagnostic 04</span>
+          <h4>The 72-Hour Recalibration</h4>
+          <p class="sdesc">For listings that have been sitting 30 days or more. The market has seen it. Scrolled past it. Dismissed it. A price drop does not change perception. A new entry point does. This prompt engineers the recalibration hook that makes an old listing feel like a new opportunity.</p>
+          <div class="mini-prompt">"This property has been on the market for [X] days. Buyers have already scrolled past it once. I need a new entry point into the same story. Give me three alternative opening hooks, each with a different emotional angle."</div>
+          <textarea id="p04" style="display:none">This property has been on the market for [X] days. Buyers have already scrolled past it once. A price drop is not the answer. I need a new entry point into the same story.
+
+Here is the current listing:
+
+[PASTE YOUR CURRENT LISTING DESCRIPTION HERE]
+
+Rewrite ONLY the opening hook. The first two to three sentences. The goal is not to change the property, just the angle of attack. Make this listing feel like something the buyer has not seen yet, even if they have.
+
+Give me three alternative opening hooks, each using a different emotional angle: one focused on lifestyle, one focused on opportunity, and one focused on timing. Explain in one sentence why each one works differently.</textarea>
+          <button class="scopy-btn" onclick="copyTextarea('p04',this)"><span class="material-symbols-outlined" style="font-size:.9rem">content_copy</span>Copy Full Prompt</button>
+        </div>
+        <div class="sec-tool">
+          <span class="tool-tag">Diagnostic 05</span>
+          <h4>The Process Auditor</h4>
+          <p class="sdesc">Most listing problems start before a single word of copy is written. They start in the intake conversation, where the agent collects features instead of collecting the story. This prompt audits your pre-listing process to find where you are losing leverage before the MLS upload even happens.</p>
+          <div class="mini-prompt">"I want to audit my pre-listing process to find where I am losing leverage before I write a single word of copy. Scan for three gaps: Where am I collecting features but missing the emotional story? What questions should I be asking the seller that I am not asking?"</div>
+          <textarea id="p05" style="display:none">I want to audit my pre-listing process to find where I am losing leverage before I write a single word of copy.
+
+Here is what I currently do before a listing goes live:
+
+[DESCRIBE YOUR INTAKE PROCESS: the questions you ask the seller, the data you collect, your current checklist]
+
+Scan this process for three specific gaps: Where am I collecting features but missing the emotional story behind the property? What questions should I be asking the seller that I am currently not asking? Where does my process assume the buyer thinks logically when they almost always buy emotionally?
+
+Then give me five questions I can add to my next seller consultation that will dramatically improve the listing copy I produce from that conversation.</textarea>
+          <button class="scopy-btn" onclick="copyTextarea('p05',this)"><span class="material-symbols-outlined" style="font-size:.9rem">content_copy</span>Copy Full Prompt</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- CHAPTER 05: CASE STUDY + THE CHALLENGE       -->
+<!-- ============================================ -->
+<section class="case-s">
+  <div class="w">
+    <div class="chap-label"><span class="ctag" style="color:rgba(255,255,255,.3)">Chapter 05</span></div>
+    <div class="case-grid">
+      <div>
+        <p style="font-family:var(--fm);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:1.25rem">Case Study: 1422 Northview</p>
+        <h2 style="font-family:var(--fd);font-size:2.5rem;font-style:italic;line-height:1.1;color:var(--white);margin-bottom:2rem">The Anatomy of a Recovery.</h2>
+        <p style="font-size:1.05rem;color:rgba(255,255,255,.5);margin-bottom:1.25rem;line-height:1.75">A four-bedroom property. Solid neighborhood. Priced correctly. Good photos. Staged properly. It sat there, untouched, for seven weeks while everyone quietly agreed the market must just be slow.</p>
+        <p style="font-size:1rem;color:rgba(255,255,255,.45);line-height:1.7">A forensic audit took 22 minutes. The diagnosis identified one phrase signaling seller distress instead of buyer opportunity. Three minor adjustments to the copy. No price change. No new photos. No additional advertising.</p>
+        <p style="font-size:1rem;color:rgba(255,255,255,.45);line-height:1.7;margin-top:1rem">Multiple offers within twelve days. Pending status in under two weeks. The property had not changed. The message had.</p>
+        <div style="margin-top:2.5rem;padding:1.5rem;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.02)">
+          <p style="font-family:var(--fd);font-size:1.3rem;font-style:italic;color:rgba(255,255,255,.75);line-height:1.4">"The error is almost never the property. The error is almost always the message surrounding it."</p>
+        </div>
+      </div>
+      <div>
+        <div class="stat-row"><div class="stat-number">47</div><div><p class="stat-lbl">Days to Stagnation</p><p class="stat-desc">Seven weeks on market with no serious offers. The seller was considering a price reduction that would have cost over $18,000 in equity.</p></div></div>
+        <div class="stat-row"><div class="stat-number" style="color:var(--gmuted)">20</div><div><p class="stat-lbl" style="color:var(--gmuted)">Minutes to Diagnose</p><p class="stat-desc">Total time from pasting the listing into the Autopsy tool to having a clinical diagnosis with a specific, actionable pivot strategy.</p></div></div>
+        <div class="stat-row"><div class="stat-number">12</div><div><p class="stat-lbl">Days to Pending</p><p class="stat-desc">After implementing three copy adjustments, the listing received multiple offers and went pending inside two weeks.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="challenge-s">
+  <div class="w">
+    <div class="chap-label"><span class="ctag">Chapter 06</span></div>
+    <div class="challenge-inner">
+      <div class="challenge-card">
+        <h3>Your First Win Starts Tonight.</h3>
+        <p>Do not wait for the perfect listing. Pull up your most stagnant one right now. The one you have been quietly avoiding. The one where the seller texts "any updates?" and you do not know what to say.</p>
+        <p>That is the one.</p>
+        <div class="challenge-steps">
+          <div class="cs-step"><span class="cs-num">01</span><p>Scroll back up to <strong>Chapter 01</strong> and open the Live Diagnostic tool.</p></div>
+          <div class="cs-step"><span class="cs-num">02</span><p>Paste your complete listing description. <strong>Every sentence.</strong></p></div>
+          <div class="cs-step"><span class="cs-num">03</span><p>Click <strong>Run the Autopsy</strong> and wait for the full report.</p></div>
+          <div class="cs-step"><span class="cs-num">04</span><p>Read the output fully. Find the <strong>highest-priority finding</strong> the tool identifies.</p></div>
+          <div class="cs-step"><span class="cs-num">05</span><p>Change that. Just that one. <strong>Republish within 72 hours.</strong></p></div>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-family:var(--fd);font-size:1.8rem;font-weight:500;margin-bottom:1.5rem">The 72-Hour Window</h3>
+        <p class="bp">Once you have your diagnosis, here is what the next 72 hours looks like. Do not deviate from the timeline. Speed is part of how this works.</p>
+        <div class="tl-block">
+          <div class="tl-item"><span class="tl-time">Hour 0 to 12</span><div><h5>Full Forensic Audit</h5><p>Run the Live Diagnostic. Read every tab of the output. Identify your primary, secondary, and tertiary issues before touching anything.</p></div></div>
+          <div class="tl-item"><span class="tl-time">Hour 12 to 24</span><div><h5>Diagnosis Confirmed</h5><p>If the issue is unclear, use the Blind Spot Finder prompt from Chapter 04. Cross-reference the two outputs. Where they overlap is where the real problem lives.</p></div></div>
+          <div class="tl-item"><span class="tl-time">Hour 24 to 48</span><div><h5>Intervention Deployed</h5><p>Write and implement your revised copy. Use the rewritten description from the diagnostic, or apply the phrase replacements to your existing text. Republish.</p></div></div>
+          <div class="tl-item"><span class="tl-time">Hour 48 to 72</span><div><h5>Market Re-Entry</h5><p>The listing is live with new copy. Monitor showing requests. The algorithm treats recently updated listings with fresh engagement data. This is your window. Use it completely.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="support-s">
+  <div class="w">
+    <div class="support-inner">
+      <span class="material-symbols-outlined">support_agent</span>
+      <h3 style="font-family:var(--fd);font-size:1.5rem;font-weight:500;margin-bottom:1rem">Something Not Working?</h3>
+      <p style="font-size:.875rem;color:var(--muted);margin-bottom:1.5rem;line-height:1.7">If the live diagnostic returns an error, it is almost always a connection issue. Refresh and try again. If the output feels generic, the input was too short. Paste the complete description. If you are still stuck, reach out and we will sort it out.</p>
+      <a href="mailto:support@bluecheeseprince.com" style="display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 2rem;background:var(--green);color:var(--white);font-family:var(--fm);font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;text-decoration:none;transition:background .2s">
+        <span class="material-symbols-outlined" style="font-size:1rem">mail</span>Contact Support
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="fi2">
+    <div class="flogo">72-Hour Listing Autopsy</div>
+    <div class="flinks"><a href="mailto:support@bluecheeseprince.com">Support</a><a href="#sales" onclick="goTo('sales')">Sales Page</a></div>
+    <span style="font-family:var(--fm);font-size:.58rem;letter-spacing:.1em;color:rgba(255,255,255,.15)">LIFETIME ACCESS INCLUDED</span>
+  </div>
+</footer>
+
+</div><!-- end product-page -->
+
+<script>
+// ============ ROUTER ============
+function goTo(page) {
+  document.querySelectorAll('.page').forEach(p => p.style.display = 'none');
+  const target = document.getElementById(page + '-page');
+  if(target) { target.style.display = 'block'; window.scrollTo(0,0); }
+  history.pushState(null, '', '#' + page);
+  initAnimations();
+}
+
+function router() {
+  const hash = (location.hash || '#sales').replace('#','');
+  const pageMap = { 'sales':'sales', 'thankyou':'thankyou', 'product':'product' };
+  const page = pageMap[hash] || 'sales';
+  document.querySelectorAll('.page').forEach(p => p.style.display = 'none');
+  const target = document.getElementById(page + '-page');
+  if(target) { target.style.display = 'block'; window.scrollTo(0,0); }
+  initAnimations();
+}
+
+window.addEventListener('hashchange', router);
+window.addEventListener('load', router);
+
+// ============ SCROLL ANIMATIONS ============
+function initAnimations() {
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold:.07, rootMargin:'0px 0px -40px 0px' });
+  document.querySelectorAll('.ap').forEach(el => {
+    el.classList.remove('in');
+    obs.observe(el);
+  });
+}
+
+// ============ SCROLL TO ID ============
+function scrollToId(id) {
+  const el = document.getElementById(id);
+  if(el) el.scrollIntoView({ behavior:'smooth' });
+}
+
+// ============ COPY PROMPTS ============
+function copyPrompt(id, btn) {
+  const el = document.getElementById(id);
+  if(!el) return;
+  const text = el.innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    btn.classList.add('copied');
+    btn.innerHTML = '<span class="material-symbols-outlined" style="font-size:1rem">check_circle</span> Copied';
+    showToast();
+    setTimeout(() => {
+      btn.classList.remove('copied');
+      btn.innerHTML = '<span class="material-symbols-outlined" style="font-size:1rem">content_copy</span> Copy This Prompt';
+    }, 2500);
+  });
+}
+
+function copyTextarea(id, btn) {
+  const el = document.getElementById(id);
+  if(!el) return;
+  navigator.clipboard.writeText(el.value).then(() => {
+    btn.classList.add('copied');
+    btn.innerHTML = '<span class="material-symbols-outlined" style="font-size:.9rem">check_circle</span> Copied';
+    showToast();
+    setTimeout(() => {
+      btn.classList.remove('copied');
+      btn.innerHTML = '<span class="material-symbols-outlined" style="font-size:.9rem">content_copy</span> Copy Full Prompt';
+    }, 2500);
+  });
+}
+
+function showToast() {
+  const t = document.getElementById('toast');
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2500);
+}
+
+// ============ LIVE DIAGNOSTIC TOOL ============
+const DSCAN_STEPS = [
+  'Initializing Listing Vitals Engine...',
+  'Running Copy Weakness Index...',
+  'Analyzing buyer psychology sequence...',
+  'Auditing algorithm visibility signals...',
+  'Mapping decay rate and timeline...',
+  'Engaging Storyteller Authority Module...',
+  'Compiling forensic findings...',
+  'Generating 72 Hour Recovery Protocol...',
+];
+
+let diagInt = null;
+
+function initDiagSteps() {
+  const el = document.getElementById('diag-steps-list');
+  if (!el) return;
+  el.innerHTML = DSCAN_STEPS.map((s, i) =>
+    `<div class="dsl-item" id="dsi-${i}"><span id="dsic-${i}" style="width:12px;flex-shrink:0">○</span><span>${s}</span></div>`
+  ).join('');
+}
+
+function updateDiagStep(stepText, prog) {
+  const stepEl = document.getElementById('diag-step-txt');
+  const pbEl = document.getElementById('diag-pb');
+  if (stepEl) stepEl.textContent = stepText;
+  if (pbEl) pbEl.style.width = prog + '%';
+  const curIdx = DSCAN_STEPS.indexOf(stepText);
+  DSCAN_STEPS.forEach((s, i) => {
+    const el = document.getElementById('dsi-' + i);
+    const ico = document.getElementById('dsic-' + i);
+    if (!el || !ico) return;
+    if (i < curIdx) { el.className = 'dsl-item done'; ico.textContent = '✓'; }
+    else if (i === curIdx) { el.className = 'dsl-item cur'; ico.textContent = '▶'; }
+    else { el.className = 'dsl-item'; ico.textContent = '○'; }
+  });
+}
+
+function runDiag() {
+  const listingEl = document.getElementById('listing-input');
+  const errEl = document.getElementById('diag-err');
+  const listing = listingEl ? listingEl.value.trim() : '';
+  if (!listing || listing.length < 20) {
+    if (errEl) { errEl.style.display = 'block'; errEl.textContent = 'Paste a listing description to run the autopsy.'; }
+    return;
+  }
+  if (errEl) errEl.style.display = 'none';
+  initDiagSteps();
+  document.getElementById('ds-input').style.display = 'none';
+  document.getElementById('ds-scan').style.display = 'block';
+  document.getElementById('ds-results').style.display = 'none';
+  updateDiagStep(DSCAN_STEPS[0], 0);
+
+  let idx = 0;
+  diagInt = setInterval(() => {
+    idx++;
+    if (idx < DSCAN_STEPS.length) {
+      updateDiagStep(DSCAN_STEPS[idx], Math.round((idx / DSCAN_STEPS.length) * 80));
+    }
+  }, 920);
+
+  fetch('/api/diagnose', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ listing })
+  })
+  .then(r => { if (!r.ok) throw new Error('API error'); return r.json(); })
+  .then(data => {
+    clearInterval(diagInt);
+    updateDiagStep('Autopsy complete. Rendering findings...', 100);
+    setTimeout(() => {
+      renderDiag(data);
+      document.getElementById('ds-scan').style.display = 'none';
+      document.getElementById('ds-results').style.display = 'block';
+      const wrap = document.getElementById('diag-wrap');
+      if (wrap) wrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 900);
+  })
+  .catch(() => {
+    clearInterval(diagInt);
+    document.getElementById('ds-scan').style.display = 'none';
+    document.getElementById('ds-input').style.display = 'block';
+    const errEl = document.getElementById('diag-err');
+    if (errEl) { errEl.style.display = 'block'; errEl.textContent = 'Scan failed. Check your connection and try again.'; }
+  });
+}
+
+function renderDiag(d) {
+  const level = d.decay_level || 'MODERATE';
+  const scolor = { CRITICAL: '#b91c1c', HIGH: '#d97706', MODERATE: '#006c49', STABLE: '#006c49' };
+
+  const score = document.getElementById('d-score');
+  if (score) { score.textContent = d.health_score; score.style.color = scolor[level] || '#006c49'; }
+  const badge = document.getElementById('d-badge');
+  if (badge) { badge.textContent = level; badge.className = 'dbadge ' + level; }
+  const days = document.getElementById('d-days');
+  if (days) days.textContent = d.days_to_invisible + ' days to algorithmic invisibility';
+  const diag = document.getElementById('d-diag');
+  if (diag) diag.textContent = d.primary_diagnosis;
+  const sgScore = document.getElementById('d-sg-score');
+  if (sgScore) sgScore.textContent = d.health_score + '/100';
+  const sgLevel = document.getElementById('d-sg-level');
+  if (sgLevel) sgLevel.textContent = level;
+  const sgDays = document.getElementById('d-sg-days');
+  if (sgDays) sgDays.textContent = d.days_to_invisible;
+  const sgPhrases = document.getElementById('d-sg-phrases');
+  if (sgPhrases) sgPhrases.textContent = (d.critical_phrases || []).length;
+
+  const phrasesEl = document.getElementById('d-phrases');
+  if (phrasesEl) {
+    phrasesEl.innerHTML = (d.critical_phrases || []).map(p => `
+      <div class="dphrase ${p.severity}">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:.75rem;margin-bottom:.75rem;flex-wrap:wrap">
+          <span class="dphr-text ${p.severity}">&ldquo;${escHtml(p.phrase)}&rdquo;</span>
+          <span class="dbadge ${p.severity}" style="margin:0">${p.severity}</span>
+        </div>
+        <p class="dphr-dmg">${escHtml(p.damage)}</p>
+        <div class="dphr-rep">
+          <span class="dphr-rep-lbl">Replace with</span>
+          <span class="dphr-rep-val">&ldquo;${escHtml(p.replacement)}&rdquo;</span>
+        </div>
+      </div>
+    `).join('') || '<p style="font-size:.875rem;color:var(--faint)">No critical phrases detected. Your copy is in solid shape.</p>';
+  }
+
+  const modulesEl = document.getElementById('d-modules');
+  if (modulesEl) {
+    modulesEl.innerHTML = (d.module_findings || []).map(m => `
+      <div class="dmod">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem;flex-wrap:wrap;gap:.5rem">
+          <span class="dmod-name">${escHtml(m.module)}</span>
+          <span class="dbadge ${m.severity}" style="margin:0">${m.severity}</span>
+        </div>
+        <p class="dmod-finding">${escHtml(m.finding)}</p>
+        <div class="dmod-act">
+          <span class="dmod-act-lbl">Action</span>
+          <span class="dmod-act-txt">${escHtml(m.action)}</span>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  const rewriteEl = document.getElementById('d-rewrite');
+  if (rewriteEl) rewriteEl.textContent = d.rewritten_description || '';
+
+  const protocolEl = document.getElementById('d-protocol');
+  if (protocolEl) {
+    protocolEl.innerHTML = (d.action_protocol || []).map(s => `
+      <div class="dprot-item">
+        <div class="dprot-left">
+          <div class="dprot-win ${s.priority}">${escHtml(s.window)}</div>
+          <span class="dpriority ${s.priority}">${s.priority}</span>
+        </div>
+        <p class="dprot-action">${escHtml(s.action)}</p>
+      </div>
+    `).join('');
+  }
+
+  switchDTab('findings');
+}
+
+function escHtml(str) {
+  if (!str) return '';
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function switchDTab(name) {
+  document.querySelectorAll('.diag-tab').forEach(t => t.classList.toggle('on', t.dataset.tab === name));
+  document.querySelectorAll('.diag-tc').forEach(c => c.classList.toggle('on', c.id === 'dt-' + name));
+}
+
+function resetDiag() {
+  document.getElementById('ds-results').style.display = 'none';
+  document.getElementById('ds-scan').style.display = 'none';
+  document.getElementById('ds-input').style.display = 'block';
+  const errEl = document.getElementById('diag-err');
+  if (errEl) errEl.style.display = 'none';
+}
+
+function copyRewriteTxt(btn) {
+  const el = document.getElementById('d-rewrite');
+  if (!el) return;
+  navigator.clipboard.writeText(el.textContent).then(() => {
+    btn.classList.add('copied');
+    btn.innerHTML = '<span class="material-symbols-outlined" style="font-size:.9rem">check_circle</span> Copied';
+    showToast();
+    setTimeout(() => {
+      btn.classList.remove('copied');
+      btn.innerHTML = '<span class="material-symbols-outlined" style="font-size:.9rem">content_copy</span> Copy Text';
+    }, 2200);
+  });
+}
+</script>
+</body>
+</html>
