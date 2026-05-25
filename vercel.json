@@ -1,4 +1,7 @@
 {
+  "rewrites": [
+    { "source": "/", "destination": "/complete.html" }
+  ],
   "functions": {
     "api/diagnose.js": {
       "maxDuration": 30
